@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "235282169418",
+    "project_id": "pixel-staff-final",
+    "storage_bucket": "pixel-staff-final.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235282169418:android:24d9b21c198bc3f13070b3",
+        "android_client_info": {
+          "package_name": "com.stackbuffers.pixelstaffapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "235282169418-9891ma1gsp32116mu6pdidaqc2u0dd6j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stackbuffers.pixelstaffapp",
+            "certificate_hash": "23e841fa32e4408201dafc92f0e693d57470b1c2"
+          }
+        },
+        {
+          "client_id": "235282169418-up25hptr0528c2mfddgdg4brniie5stu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCggVUsPqO3j4xHC_udd0PVaF15IkUdXaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "235282169418-up25hptr0528c2mfddgdg4brniie5stu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "235282169418-nadjbl2nit2rof6acktcsd4oivo486sr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.stackbuffers.pixelstaffapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
