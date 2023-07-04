@@ -111,1319 +111,1127 @@ class _CheckBoxTestState extends State<CheckBoxTest> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey.shade50,
-      body: SafeArea(
-        child: Container(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  padding: EdgeInsets.only(top: 40.h, left: 10.w),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Health Condition',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 27.sp,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.grey.shade50,
+        body: SafeArea(
+          child: Container(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(top: 40.h, left: 10.w),
+                    child: Column(
+                      children: [
+                        Text(
+                          'Health Condition',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 27.sp,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 10.h),
-                      const Text(
-                        'Details about your Health Condition',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: Colors.grey,
+                        SizedBox(height: 10.h),
+                        const Text(
+                          'Details about your Health Condition',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            color: Colors.grey,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 20.h),
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20.w),
-                        height: 30.h,
-                        child: Row(
-                          children: [
-                            Container(
-                              height: 20.h,
-                              width: 20.w,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.red,
-                              ),
-                              child: Icon(
-                                Icons.done,
-                                color: Colors.white,
-                                size: 20.sp,
-                              ),
-                            ),
-                            const Spacer(),
-                            Container(
-                              height: 20.h,
-                              width: 20.w,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.red,
-                              ),
-                              child: Icon(
-                                Icons.done,
-                                color: Colors.white,
-                                size: 20.sp,
-                              ),
-                            ),
-                            const Spacer(),
-                            Container(
-                              height: 20.h,
-                              width: 20.w,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.red,
-                              ),
-                              child: Icon(
-                                Icons.done,
-                                color: Colors.white,
-                                size: 20.sp,
-                              ),
-                            ),
-                            const Spacer(),
-                            Container(
-                              height: 20.h,
-                              width: 20.w,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.red,
-                              ),
-                              child: Icon(
-                                Icons.done,
-                                color: Colors.white,
-                                size: 20.sp,
-                              ),
-                            ),
-                            const Spacer(),
-                            Container(
-                              height: 20.h,
-                              width: 20.w,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.red,
-                              ),
-                              child: Icon(
-                                Icons.done,
-                                color: Colors.white,
-                                size: 20.sp,
-                              ),
-                            ),
-                            const Spacer(),
-                            Container(
-                              height: 20.h,
-                              width: 20.w,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.red,
-                              ),
-                              child: Icon(
-                                Icons.done,
-                                color: Colors.white,
-                                size: 20.sp,
-                              ),
-                            ),
-                            const Spacer(),
-                            Container(
-                              height: 20.h,
-                              width: 20.w,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.red,
-                              ),
-                              child: Icon(
-                                Icons.done,
-                                color: Colors.white,
-                                size: 20.sp,
-                              ),
-                            ),
-                            const Spacer(),
-                            Container(
-                              height: 20.h,
-                              width: 20.w,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.red,
-                              ),
-                              child: Icon(
-                                Icons.done,
-                                color: Colors.white,
-                                size: 20.sp,
-                              ),
-                            ),
-                            const Spacer(),
-                            Container(
-                              height: 20.h,
-                              width: 20.w,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.red,
-                              ),
-                              child: Icon(
-                                Icons.done,
-                                color: Colors.white,
-                                size: 20.sp,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 20.h),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            const Text(
-                                'Do you suffer from any of the health conditions listed'),
-                            const Text('below?'),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        padding:
-                            EdgeInsets.only(left: 20.w, right: 20.w, top: 15.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text('Diabetes'),
-                            // Container(
-                            //   child: FlutterSwitch(
-                            //     //activeColor: Colors.red,
-                            //     toggleColor: Colors.red,
-                            //     activeColor: Colors.grey.shade300,
-                            //     width: 50,
-                            //     height: 25,
-                            //     valueFontSize: 25.0,
-                            //     toggleSize: 20.0,
-                            //     value: status,
-                            //     borderRadius: 30.0,
-                            //     // padding: 8.0,
-                            //     //showOnOff: true,
-                            //     onToggle: (val) {
-                            //       setState(() {
-                            //         status = val;
-                            //       });
-                            //     },
-                            //   ),
-                            // ),
-
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    const Text('Yes'),
-                                    Checkbox(
-                                        value: status,
-                                        onChanged: (val) async {
-                                          SharedPreferences _prefs =
-                                              await SharedPreferences
-                                                  .getInstance();
-                                          _prefs.setBool("statusH", val!);
-                                          print('okkkk${val}');
-                                          setState(() {
-                                            status = val;
-                                          });
-                                        }),
-                                  ],
+                        SizedBox(height: 20.h),
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 20.w),
+                          height: 30.h,
+                          child: Row(
+                            children: [
+                              Container(
+                                height: 20.h,
+                                width: 20.w,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.red,
                                 ),
-
-                                // Column(
-                                //   children: [
-                                //     const Text('No'),
-                                //     Checkbox(
-                                //         value: !status,
-                                //         onChanged: (val) async {
-                                //           SharedPreferences _prefs =
-                                //               await SharedPreferences
-                                //                   .getInstance();
-                                //           // _prefs.setBool("statusH", val!);
-                                //           setState(() {
-                                //             status = !val!;
-                                //           });
-                                //           _prefs.setBool("statusH", status);
-                                //         }),
-                                //   ],
-                                // ),
-                              ],
-                            )
-                          ],
+                                child: Icon(
+                                  Icons.done,
+                                  color: Colors.white,
+                                  size: 20.sp,
+                                ),
+                              ),
+                              const Spacer(),
+                              Container(
+                                height: 20.h,
+                                width: 20.w,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.red,
+                                ),
+                                child: Icon(
+                                  Icons.done,
+                                  color: Colors.white,
+                                  size: 20.sp,
+                                ),
+                              ),
+                              const Spacer(),
+                              Container(
+                                height: 20.h,
+                                width: 20.w,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.red,
+                                ),
+                                child: Icon(
+                                  Icons.done,
+                                  color: Colors.white,
+                                  size: 20.sp,
+                                ),
+                              ),
+                              const Spacer(),
+                              Container(
+                                height: 20.h,
+                                width: 20.w,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.red,
+                                ),
+                                child: Icon(
+                                  Icons.done,
+                                  color: Colors.white,
+                                  size: 20.sp,
+                                ),
+                              ),
+                              const Spacer(),
+                              Container(
+                                height: 20.h,
+                                width: 20.w,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.red,
+                                ),
+                                child: Icon(
+                                  Icons.done,
+                                  color: Colors.white,
+                                  size: 20.sp,
+                                ),
+                              ),
+                              const Spacer(),
+                              Container(
+                                height: 20.h,
+                                width: 20.w,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.red,
+                                ),
+                                child: Icon(
+                                  Icons.done,
+                                  color: Colors.white,
+                                  size: 20.sp,
+                                ),
+                              ),
+                              const Spacer(),
+                              Container(
+                                height: 20.h,
+                                width: 20.w,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.red,
+                                ),
+                                child: Icon(
+                                  Icons.done,
+                                  color: Colors.white,
+                                  size: 20.sp,
+                                ),
+                              ),
+                              const Spacer(),
+                              Container(
+                                height: 20.h,
+                                width: 20.w,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.red,
+                                ),
+                                child: Icon(
+                                  Icons.done,
+                                  color: Colors.white,
+                                  size: 20.sp,
+                                ),
+                              ),
+                              const Spacer(),
+                              Container(
+                                height: 20.h,
+                                width: 20.w,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.red,
+                                ),
+                                child: Icon(
+                                  Icons.done,
+                                  color: Colors.white,
+                                  size: 20.sp,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                      Container(
-                        padding:
-                            EdgeInsets.only(left: 20.w, right: 20.w, top: 15.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
+                        Container(
+                          margin: EdgeInsets.only(top: 20.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              const Text(
+                                  'Do you suffer from any of the health conditions listed'),
+                              const Text('below?'),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 20.w, right: 20.w, top: 15.h),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text('Diabetes'),
+                              // Container(
+                              //   child: FlutterSwitch(
+                              //     //activeColor: Colors.red,
+                              //     toggleColor: Colors.red,
+                              //     activeColor: Colors.grey.shade300,
+                              //     width: 50,
+                              //     height: 25,
+                              //     valueFontSize: 25.0,
+                              //     toggleSize: 20.0,
+                              //     value: status,
+                              //     borderRadius: 30.0,
+                              //     // padding: 8.0,
+                              //     //showOnOff: true,
+                              //     onToggle: (val) {
+                              //       setState(() {
+                              //         status = val;
+                              //       });
+                              //     },
+                              //   ),
+                              // ),
+
+                              Row(
+                                children: [
+                                  Column(
+                                    children: [
+                                      const Text('Yes'),
+                                      Checkbox(
+                                          value: status,
+                                          onChanged: (val) async {
+                                            SharedPreferences _prefs =
+                                                await SharedPreferences
+                                                    .getInstance();
+                                            _prefs.setBool("statusH", val!);
+                                            print('okkkk${val}');
+                                            setState(() {
+                                              status = val;
+                                            });
+                                          }),
+                                    ],
+                                  ),
+
+                                  // Column(
+                                  //   children: [
+                                  //     const Text('No'),
+                                  //     Checkbox(
+                                  //         value: !status,
+                                  //         onChanged: (val) async {
+                                  //           SharedPreferences _prefs =
+                                  //               await SharedPreferences
+                                  //                   .getInstance();
+                                  //           // _prefs.setBool("statusH", val!);
+                                  //           setState(() {
+                                  //             status = !val!;
+                                  //           });
+                                  //           _prefs.setBool("statusH", status);
+                                  //         }),
+                                  //   ],
+                                  // ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 20.w, right: 20.w, top: 15.h),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.6,
+                                  child: const Text(
+                                      'Heart or Circulatory Disorders')),
+                              // Container(
+                              //   child: FlutterSwitch(
+                              //     //activeColor: Colors.red,
+                              //     toggleColor: Colors.red,
+                              //     activeColor: Colors.grey.shade300,
+                              //     width: 50,
+                              //     height: 25,
+                              //     valueFontSize: 25.0,
+                              //     toggleSize: 20.0,
+                              //     value: status1,
+                              //     borderRadius: 30.0,
+                              //     // padding: 8.0,
+                              //     //showOnOff: true,
+                              //     onToggle: (val) {
+                              //       setState(() {
+                              //         status1 = val;
+                              //       });
+                              //     },
+                              //   ),
+                              // ),
+                              Row(
+                                children: [
+                                  Column(
+                                    children: [
+                                      const Text('Yes'),
+                                      Checkbox(
+                                          value: status1,
+                                          onChanged: (val) async {
+                                            SharedPreferences _prefs =
+                                                await SharedPreferences
+                                                    .getInstance();
+                                            setState(() {
+                                              status1 = val!;
+                                              print(val);
+                                            });
+                                            _prefs.setBool("status1H", status1);
+                                          }),
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      const Text('No'),
+                                      Checkbox(
+                                          value: !status1,
+                                          onChanged: (val) async {
+                                            SharedPreferences _prefs =
+                                                await SharedPreferences
+                                                    .getInstance();
+                                            // _prefs.setBool("status1H", val!);
+                                            setState(() {
+                                              status1 = !val!;
+                                              print(val);
+                                            });
+                                            _prefs.setBool("status1H", status1);
+                                          }),
+                                    ],
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 20.w, right: 20.w, top: 15.h),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.6,
+                                  child: const Text(
+                                      'Stomach or Intestinal Disorders')),
+                              // Container(
+                              //   child: FlutterSwitch(
+                              //     //activeColor: Colors.red,
+                              //     toggleColor: Colors.red,
+                              //     activeColor: Colors.grey.shade300,
+                              //     width: 50,
+                              //     height: 25,
+                              //     valueFontSize: 25.0,
+                              //     toggleSize: 20.0,
+                              //     value: status2,
+                              //     borderRadius: 30.0,
+                              //     // padding: 8.0,
+                              //     //showOnOff: true,
+                              //     onToggle: (val) {
+                              //       setState(() {
+                              //         status2 = val;
+                              //       });
+                              //     },
+                              //   ),
+                              // ),
+                              Row(
+                                children: [
+                                  Column(
+                                    children: [
+                                      const Text('Yes'),
+                                      Checkbox(
+                                          value: status2,
+                                          onChanged: (val) async {
+                                            SharedPreferences _prefs =
+                                                await SharedPreferences
+                                                    .getInstance();
+                                            // _prefs.setBool("status2H", val!);
+                                            setState(() {
+                                              status2 = val!;
+                                            });
+                                            _prefs.setBool("status2H", status2);
+                                          }),
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      const Text('No'),
+                                      Checkbox(
+                                          value: !status2,
+                                          onChanged: (val) async {
+                                            SharedPreferences _prefs =
+                                                await SharedPreferences
+                                                    .getInstance();
+                                            // _prefs.setBool("status2H", val!);
+                                            setState(() {
+                                              status2 = !val!;
+                                            });
+                                            _prefs.setBool("status2H", status2);
+                                          }),
+                                    ],
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 20.w, right: 20.w, top: 15.h),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
                                 width: MediaQuery.of(context).size.width * 0.6,
                                 child: const Text(
-                                    'Heart or Circulatory Disorders')),
-                            // Container(
-                            //   child: FlutterSwitch(
-                            //     //activeColor: Colors.red,
-                            //     toggleColor: Colors.red,
-                            //     activeColor: Colors.grey.shade300,
-                            //     width: 50,
-                            //     height: 25,
-                            //     valueFontSize: 25.0,
-                            //     toggleSize: 20.0,
-                            //     value: status1,
-                            //     borderRadius: 30.0,
-                            //     // padding: 8.0,
-                            //     //showOnOff: true,
-                            //     onToggle: (val) {
-                            //       setState(() {
-                            //         status1 = val;
-                            //       });
-                            //     },
-                            //   ),
-                            // ),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    const Text('Yes'),
-                                    Checkbox(
-                                        value: status1,
-                                        onChanged: (val) async {
-                                          SharedPreferences _prefs =
-                                              await SharedPreferences
-                                                  .getInstance();
-                                          setState(() {
-                                            status1 = val!;
-                                            print(val);
-                                          });
-                                          _prefs.setBool("status1H", status1);
-                                        }),
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    const Text('No'),
-                                    Checkbox(
-                                        value: !status1,
-                                        onChanged: (val) async {
-                                          SharedPreferences _prefs =
-                                              await SharedPreferences
-                                                  .getInstance();
-                                          // _prefs.setBool("status1H", val!);
-                                          setState(() {
-                                            status1 = !val!;
-                                            print(val);
-                                          });
-                                          _prefs.setBool("status1H", status1);
-                                        }),
-                                  ],
-                                ),
-                              ],
-                            )
-                          ],
+                                    'Any disease which cause difficulty in sleeping'),
+                              ),
+                              // Container(
+                              //   child: FlutterSwitch(
+                              //     //activeColor: Colors.red,
+                              //     toggleColor: Colors.red,
+                              //     activeColor: Colors.grey.shade300,
+                              //     width: 50,
+                              //     height: 25,
+                              //     valueFontSize: 25.0,
+                              //     toggleSize: 20.0,
+                              //     value: status3,
+                              //     borderRadius: 30.0,
+                              //     // padding: 8.0,
+                              //     //showOnOff: true,
+                              //     onToggle: (val) {
+                              //       setState(() {
+                              //         status3 = val;
+                              //       });
+                              //     },
+                              //   ),
+                              // ),
+                              Row(
+                                children: [
+                                  Column(
+                                    children: [
+                                      const Text('Yes'),
+                                      Checkbox(
+                                          value: status3,
+                                          onChanged: (val) async {
+                                            SharedPreferences _prefs =
+                                                await SharedPreferences
+                                                    .getInstance();
+                                            setState(() {
+                                              status3 = val!;
+                                            });
+                                            _prefs.setBool("status3H", status3);
+                                          }),
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      const Text('No'),
+                                      Checkbox(
+                                          value: !status3,
+                                          onChanged: (val) async {
+                                            SharedPreferences _prefs =
+                                                await SharedPreferences
+                                                    .getInstance();
+                                            setState(() {
+                                              status3 = !val!;
+                                            });
+                                            _prefs.setBool("status3H", status3);
+                                          }),
+                                    ],
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                      Container(
-                        padding:
-                            EdgeInsets.only(left: 20.w, right: 20.w, top: 15.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                                width: MediaQuery.of(context).size.width * 0.6,
-                                child: const Text(
-                                    'Stomach or Intestinal Disorders')),
-                            // Container(
-                            //   child: FlutterSwitch(
-                            //     //activeColor: Colors.red,
-                            //     toggleColor: Colors.red,
-                            //     activeColor: Colors.grey.shade300,
-                            //     width: 50,
-                            //     height: 25,
-                            //     valueFontSize: 25.0,
-                            //     toggleSize: 20.0,
-                            //     value: status2,
-                            //     borderRadius: 30.0,
-                            //     // padding: 8.0,
-                            //     //showOnOff: true,
-                            //     onToggle: (val) {
-                            //       setState(() {
-                            //         status2 = val;
-                            //       });
-                            //     },
-                            //   ),
-                            // ),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    const Text('Yes'),
-                                    Checkbox(
-                                        value: status2,
-                                        onChanged: (val) async {
-                                          SharedPreferences _prefs =
-                                              await SharedPreferences
-                                                  .getInstance();
-                                          // _prefs.setBool("status2H", val!);
-                                          setState(() {
-                                            status2 = val!;
-                                          });
-                                          _prefs.setBool("status2H", status2);
-                                        }),
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    const Text('No'),
-                                    Checkbox(
-                                        value: !status2,
-                                        onChanged: (val) async {
-                                          SharedPreferences _prefs =
-                                              await SharedPreferences
-                                                  .getInstance();
-                                          // _prefs.setBool("status2H", val!);
-                                          setState(() {
-                                            status2 = !val!;
-                                          });
-                                          _prefs.setBool("status2H", status2);
-                                        }),
-                                  ],
-                                ),
-                              ],
-                            )
-                          ],
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 20.w, right: 20.w, top: 15.h),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text('Chronic chest disorders'),
+                              // Container(
+                              //   child: FlutterSwitch(
+                              //     //activeColor: Colors.red,
+                              //     toggleColor: Colors.red,
+                              //     activeColor: Colors.grey.shade300,
+                              //     width: 50,
+                              //     height: 25,
+                              //     valueFontSize: 25.0,
+                              //     toggleSize: 20.0,
+                              //     value: status4,
+                              //     borderRadius: 30.0,
+                              //     // padding: 8.0,
+                              //     //showOnOff: true,
+                              //     onToggle: (val) {
+                              //       setState(() {
+                              //         status4 = val;
+                              //       });
+                              //     },
+                              //   ),
+                              // ),
+                              Row(
+                                children: [
+                                  Column(
+                                    children: [
+                                      const Text('Yes'),
+                                      Checkbox(
+                                          value: status4,
+                                          onChanged: (val) async {
+                                            SharedPreferences _prefs =
+                                                await SharedPreferences
+                                                    .getInstance();
+                                            setState(() {
+                                              status4 = val!;
+                                            });
+                                            _prefs.setBool("status4H", status4);
+                                          }),
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      const Text('No'),
+                                      Checkbox(
+                                          value: !status4,
+                                          onChanged: (val) async {
+                                            SharedPreferences _prefs =
+                                                await SharedPreferences
+                                                    .getInstance();
+                                            setState(() {
+                                              status4 = !val!;
+                                            });
+                                            _prefs.setBool("status4H", status4);
+                                          }),
+                                    ],
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                      Container(
-                        padding:
-                            EdgeInsets.only(left: 20.w, right: 20.w, top: 15.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.6,
-                              child: const Text(
-                                  'Any disease which cause difficulty in sleeping'),
-                            ),
-                            // Container(
-                            //   child: FlutterSwitch(
-                            //     //activeColor: Colors.red,
-                            //     toggleColor: Colors.red,
-                            //     activeColor: Colors.grey.shade300,
-                            //     width: 50,
-                            //     height: 25,
-                            //     valueFontSize: 25.0,
-                            //     toggleSize: 20.0,
-                            //     value: status3,
-                            //     borderRadius: 30.0,
-                            //     // padding: 8.0,
-                            //     //showOnOff: true,
-                            //     onToggle: (val) {
-                            //       setState(() {
-                            //         status3 = val;
-                            //       });
-                            //     },
-                            //   ),
-                            // ),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    const Text('Yes'),
-                                    Checkbox(
-                                        value: status3,
-                                        onChanged: (val) async {
-                                          SharedPreferences _prefs =
-                                              await SharedPreferences
-                                                  .getInstance();
-                                          setState(() {
-                                            status3 = val!;
-                                          });
-                                          _prefs.setBool("status3H", status3);
-                                        }),
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    const Text('No'),
-                                    Checkbox(
-                                        value: !status3,
-                                        onChanged: (val) async {
-                                          SharedPreferences _prefs =
-                                              await SharedPreferences
-                                                  .getInstance();
-                                          setState(() {
-                                            status3 = !val!;
-                                          });
-                                          _prefs.setBool("status3H", status3);
-                                        }),
-                                  ],
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        padding:
-                            EdgeInsets.only(left: 20.w, right: 20.w, top: 15.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text('Chronic chest disorders'),
-                            // Container(
-                            //   child: FlutterSwitch(
-                            //     //activeColor: Colors.red,
-                            //     toggleColor: Colors.red,
-                            //     activeColor: Colors.grey.shade300,
-                            //     width: 50,
-                            //     height: 25,
-                            //     valueFontSize: 25.0,
-                            //     toggleSize: 20.0,
-                            //     value: status4,
-                            //     borderRadius: 30.0,
-                            //     // padding: 8.0,
-                            //     //showOnOff: true,
-                            //     onToggle: (val) {
-                            //       setState(() {
-                            //         status4 = val;
-                            //       });
-                            //     },
-                            //   ),
-                            // ),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    const Text('Yes'),
-                                    Checkbox(
-                                        value: status4,
-                                        onChanged: (val) async {
-                                          SharedPreferences _prefs =
-                                              await SharedPreferences
-                                                  .getInstance();
-                                          setState(() {
-                                            status4 = val!;
-                                          });
-                                          _prefs.setBool("status4H", status4);
-                                        }),
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    const Text('No'),
-                                    Checkbox(
-                                        value: !status4,
-                                        onChanged: (val) async {
-                                          SharedPreferences _prefs =
-                                              await SharedPreferences
-                                                  .getInstance();
-                                          setState(() {
-                                            status4 = !val!;
-                                          });
-                                          _prefs.setBool("status4H", status4);
-                                        }),
-                                  ],
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        padding:
-                            EdgeInsets.only(left: 20.w, right: 20.w, top: 15.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Expanded(
-                              child: Text(
-                                  'Any other medical condiotion, requring medication to a strict timetable?'),
-                            ),
-                            // Container(
-                            //   child: FlutterSwitch(
-                            //     //activeColor: Colors.red,
-                            //     toggleColor: Colors.red,
-                            //     activeColor: Colors.grey.shade300,
-                            //     width: 50,
-                            //     height: 25,
-                            //     valueFontSize: 25.0,
-                            //     toggleSize: 20.0,
-                            //     value: status5,
-                            //     borderRadius: 30.0,
-                            //     // padding: 8.0,
-                            //     //showOnOff: true,
-                            //     onToggle: (val) {
-                            //       setState(() {
-                            //         status5 = val;
-                            //       });
-                            //     },
-                            //   ),
-                            // ),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    const Text('Yes'),
-                                    Checkbox(
-                                        value: status5,
-                                        onChanged: (val) async {
-                                          SharedPreferences _prefs =
-                                              await SharedPreferences
-                                                  .getInstance();
-                                          setState(() {
-                                            status5 = val!;
-                                          });
-                                          _prefs.setBool("status5H", status5);
-                                        }),
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    const Text('No'),
-                                    Checkbox(
-                                        value: !status5,
-                                        onChanged: (val) async {
-                                          SharedPreferences _prefs =
-                                              await SharedPreferences
-                                                  .getInstance();
-                                          setState(() {
-                                            status5 = !val!;
-                                          });
-                                          _prefs.setBool("status5H", status5);
-                                        }),
-                                  ],
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        padding:
-                            EdgeInsets.only(left: 20.w, right: 20.w, top: 15.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Expanded(
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 20.w, right: 20.w, top: 15.h),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Expanded(
                                 child: Text(
-                                    'Have you recently shown flu-like/COVID-19 Symptoms?')),
-                            // Container(
-                            //   child: FlutterSwitch(
-                            //     //activeColor: Colors.red,
-                            //     toggleColor: Colors.red,
-                            //     activeColor: Colors.grey.shade300,
-                            //     width: 50,
-                            //     height: 25,
-                            //     valueFontSize: 25.0,
-                            //     toggleSize: 20.0,
-                            //     value: status6,
-                            //     borderRadius: 30.0,
-                            //     // padding: 8.0,
-                            //     //showOnOff: true,
-                            //     onToggle: (val) {
-                            //       setState(() {
-                            //         status6 = val;
-                            //       });
-                            //     },
-                            //   ),
-                            // ),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    const Text('Yes'),
-                                    Checkbox(
-                                        value: status6,
-                                        onChanged: (val) async {
-                                          SharedPreferences _prefs =
-                                              await SharedPreferences
-                                                  .getInstance();
-                                          setState(() {
-                                            status6 = val!;
-                                          });
-                                          _prefs.setBool("status6H", status6);
-                                        }),
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    const Text('No'),
-                                    Checkbox(
-                                        value: !status6,
-                                        onChanged: (val) async {
-                                          SharedPreferences _prefs =
-                                              await SharedPreferences
-                                                  .getInstance();
-                                          setState(() {
-                                            status6 = !val!;
-                                          });
-                                          _prefs.setBool("status6H", status6);
-                                        }),
-                                  ],
-                                ),
-                              ],
-                            )
-                          ],
+                                    'Any other medical condiotion, requring medication to a strict timetable?'),
+                              ),
+                              // Container(
+                              //   child: FlutterSwitch(
+                              //     //activeColor: Colors.red,
+                              //     toggleColor: Colors.red,
+                              //     activeColor: Colors.grey.shade300,
+                              //     width: 50,
+                              //     height: 25,
+                              //     valueFontSize: 25.0,
+                              //     toggleSize: 20.0,
+                              //     value: status5,
+                              //     borderRadius: 30.0,
+                              //     // padding: 8.0,
+                              //     //showOnOff: true,
+                              //     onToggle: (val) {
+                              //       setState(() {
+                              //         status5 = val;
+                              //       });
+                              //     },
+                              //   ),
+                              // ),
+                              Row(
+                                children: [
+                                  Column(
+                                    children: [
+                                      const Text('Yes'),
+                                      Checkbox(
+                                          value: status5,
+                                          onChanged: (val) async {
+                                            SharedPreferences _prefs =
+                                                await SharedPreferences
+                                                    .getInstance();
+                                            setState(() {
+                                              status5 = val!;
+                                            });
+                                            _prefs.setBool("status5H", status5);
+                                          }),
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      const Text('No'),
+                                      Checkbox(
+                                          value: !status5,
+                                          onChanged: (val) async {
+                                            SharedPreferences _prefs =
+                                                await SharedPreferences
+                                                    .getInstance();
+                                            setState(() {
+                                              status5 = !val!;
+                                            });
+                                            _prefs.setBool("status5H", status5);
+                                          }),
+                                    ],
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsets.only(left: 20.w, right: 20.w, top: 15.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.8,
-                              margin: EdgeInsets.only(top: 20.h),
-                              child: const Text(
-                                  'if you have answered \'yes\' to any of the above questions, you may be asked to see a doctor or nurse.',
-                                  textAlign: TextAlign.justify),
-                            ),
-                          ],
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 20.w, right: 20.w, top: 15.h),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Expanded(
+                                  child: Text(
+                                      'Have you recently shown flu-like/COVID-19 Symptoms?')),
+                              // Container(
+                              //   child: FlutterSwitch(
+                              //     //activeColor: Colors.red,
+                              //     toggleColor: Colors.red,
+                              //     activeColor: Colors.grey.shade300,
+                              //     width: 50,
+                              //     height: 25,
+                              //     valueFontSize: 25.0,
+                              //     toggleSize: 20.0,
+                              //     value: status6,
+                              //     borderRadius: 30.0,
+                              //     // padding: 8.0,
+                              //     //showOnOff: true,
+                              //     onToggle: (val) {
+                              //       setState(() {
+                              //         status6 = val;
+                              //       });
+                              //     },
+                              //   ),
+                              // ),
+                              Row(
+                                children: [
+                                  Column(
+                                    children: [
+                                      const Text('Yes'),
+                                      Checkbox(
+                                          value: status6,
+                                          onChanged: (val) async {
+                                            SharedPreferences _prefs =
+                                                await SharedPreferences
+                                                    .getInstance();
+                                            setState(() {
+                                              status6 = val!;
+                                            });
+                                            _prefs.setBool("status6H", status6);
+                                          }),
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      const Text('No'),
+                                      Checkbox(
+                                          value: !status6,
+                                          onChanged: (val) async {
+                                            SharedPreferences _prefs =
+                                                await SharedPreferences
+                                                    .getInstance();
+                                            setState(() {
+                                              status6 = !val!;
+                                            });
+                                            _prefs.setBool("status6H", status6);
+                                          }),
+                                    ],
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsets.only(left: 20.w, right: 20.w, top: 15.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.8,
-                              margin: EdgeInsets.only(top: 20.h),
-                              child: const Text(
-                                  'I confirm, in my declaration, that the above information provided is correct to the best of my knowledge.',
-                                  textAlign: TextAlign.justify),
-                            ),
-                          ],
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: 20.w, right: 20.w, top: 15.h),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.8,
+                                margin: EdgeInsets.only(top: 20.h),
+                                child: const Text(
+                                    'if you have answered \'yes\' to any of the above questions, you may be asked to see a doctor or nurse.',
+                                    textAlign: TextAlign.justify),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: 20.w, right: 20.w, top: 15.h),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.8,
+                                margin: EdgeInsets.only(top: 20.h),
+                                child: const Text(
+                                    'I confirm, in my declaration, that the above information provided is correct to the best of my knowledge.',
+                                    textAlign: TextAlign.justify),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(left: 20.w, top: 15.h),
-                      child: const Text('Date of last negative COVID-19 test'),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsets.only(top: 10.h, left: 20.w, right: 20.w),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            height: 50.h,
-                            width: 90.w,
-                            child: DropdownButtonFormField<String>(
-                              value: day,
-                              items: List.generate(
-                                  31,
-                                  (index) => DropdownMenuItem(
-                                        child: Text('${index + 1}'),
-                                        value: '${index + 1}',
-                                      )),
-                              onChanged: (String? value) async {
-                                day = value!;
-                                SharedPreferences _prefs =
-                                    await SharedPreferences.getInstance();
-                                _prefs.setString("dayH", value.toString());
-                                setState(() {});
-                              },
-                              decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.symmetric(
-                                    vertical: 5, horizontal: 5),
-                                hintStyle: GoogleFonts.dmSans(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 15.sp,
-                                  color: const Color(0xffACA9A9),
-                                ),
-                                fillColor: Colors.grey.shade200,
-                                filled: true,
-                                border: const OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(8),
-                                  ),
-                                ),
-                                enabledBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(8),
-                                  ),
-                                ),
-                                focusedBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(8),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 10.w),
-                          Container(
-                            height: 50.h,
-                            width: 140.w,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade200,
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: DropdownButtonFormField<String>(
-                              value: month,
-                              items: [
-                                'January',
-                                'February',
-                                'March',
-                                'April',
-                                'May',
-                                'June',
-                                'July',
-                                'August',
-                                'September',
-                                'October',
-                                'November',
-                                'December'
-                              ]
-                                  .map((e) => DropdownMenuItem(
-                                        child: Text('${e}'),
-                                        value: e,
-                                      ))
-                                  .toList(),
-                              onChanged: (String? value) async {
-                                month = value!;
-                                SharedPreferences _prefs =
-                                    await SharedPreferences.getInstance();
-                                _prefs.setString("monthH", value.toString());
-                                setState(() {});
-                              },
-                              decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.symmetric(
-                                    vertical: 5, horizontal: 5),
-                                hintStyle: GoogleFonts.dmSans(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 15.sp,
-                                  color: const Color(0xffACA9A9),
-                                ),
-                                fillColor: Colors.grey.shade200,
-                                filled: true,
-                                border: const OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(8),
-                                  ),
-                                ),
-                                enabledBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(8),
-                                  ),
-                                ),
-                                focusedBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(8),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 10.w),
-                          Container(
-                            height: 50.h,
-                            width: 100.w,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade200,
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: DropdownButtonFormField<String>(
-                              value: year,
-                              items: List.generate(
-                                  DateTime.now().year,
-                                  (index) => DropdownMenuItem(
-                                        child: Text(
-                                            '${DateTime.now().year - index}'),
-                                        value: '${DateTime.now().year - index}',
-                                      )),
-                              onChanged: (String? value) async {
-                                year = value!;
-
-                                SharedPreferences _prefs =
-                                    await SharedPreferences.getInstance();
-                                _prefs.setString("yearH", value.toString());
-                                setState(() {});
-                              },
-                              decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.symmetric(
-                                    vertical: 5, horizontal: 5),
-                                hintStyle: GoogleFonts.dmSans(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 15.sp,
-                                  color: const Color(0xffACA9A9),
-                                ),
-                                fillColor: Colors.grey.shade200,
-                                filled: true,
-                                border: const OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(8),
-                                  ),
-                                ),
-                                enabledBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(8),
-                                  ),
-                                ),
-                                focusedBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(8),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 20.w, top: 15.h),
-                      child: const Text(
-                          'Have you ever had tuberculosis(TB) vaccine'),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 20.w, right: 20.w),
-                      child: DropdownButtonFormField<String>(
-                        value: title1Selected,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Please select from this field';
-                          }
-                          return null;
-                        },
-                        items: title
-                            .map((e) => DropdownMenuItem<String>(
-                                  child: Text(e),
-                                  value: e,
-                                ))
-                            .toList(),
-                        onChanged: (String? value) async {
-                          title1Selected = value!;
-
-                          SharedPreferences _prefs =
-                              await SharedPreferences.getInstance();
-                          _prefs.setString("title1SelectedH", value.toString());
-                        },
-                        decoration: InputDecoration(
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 5),
-                          hintStyle: GoogleFonts.dmSans(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15.sp,
-                            color: const Color(0xffACA9A9),
-                          ),
-                          fillColor: Colors.grey.shade200,
-                          filled: true,
-                          border: const OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8),
-                            ),
-                          ),
-                          enabledBorder: const OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8),
-                            ),
-                          ),
-                          focusedBorder: const OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 20.w, top: 15.h),
-                      child:
-                          const Text('Have you worked in a care home before?'),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 20.w, right: 20.w),
-                      child: DropdownButtonFormField<String>(
-                        value: title2Selected,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Please select from this field';
-                          }
-                          return null;
-                        },
-                        items: title
-                            .map((e) => DropdownMenuItem<String>(
-                                  child: Text(e),
-                                  value: e,
-                                ))
-                            .toList(),
-                        onChanged: (String? value) async {
-                          title2Selected = value!;
-                          SharedPreferences _prefs =
-                              await SharedPreferences.getInstance();
-                          _prefs.setString("title2SelectedH", value.toString());
-                        },
-                        decoration: InputDecoration(
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 5),
-                          hintStyle: GoogleFonts.dmSans(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15.sp,
-                            color: const Color(0xffACA9A9),
-                          ),
-                          fillColor: Colors.grey.shade200,
-                          filled: true,
-                          border: const OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8),
-                            ),
-                          ),
-                          enabledBorder: const OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8),
-                            ),
-                          ),
-                          focusedBorder: const OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 20.w, top: 15.h),
-                      child: const Text(
-                          'Have you worked in demantia care before?'),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 20.w, right: 20.w),
-                      child: DropdownButtonFormField<String>(
-                        value: title3Selected,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Please select from this field';
-                          }
-                          return null;
-                        },
-                        items: title
-                            .map((e) => DropdownMenuItem<String>(
-                                  child: Text(e),
-                                  value: e,
-                                ))
-                            .toList(),
-                        onChanged: (String? value) async {
-                          title3Selected = value!;
-                          SharedPreferences _prefs =
-                              await SharedPreferences.getInstance();
-                          _prefs.setString("title3SelectedH", value.toString());
-                        },
-                        decoration: InputDecoration(
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 5),
-                          hintStyle: GoogleFonts.dmSans(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15.sp,
-                            color: const Color(0xffACA9A9),
-                          ),
-                          fillColor: Colors.grey.shade200,
-                          filled: true,
-                          border: const OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8),
-                            ),
-                          ),
-                          enabledBorder: const OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8),
-                            ),
-                          ),
-                          focusedBorder: const OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 20.w, top: 15.h),
-                      child: const Text('Do you have a driving license?'),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 20.w, right: 20.w),
-                      child: DropdownButtonFormField<String>(
-                        value: title4Selected,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Please select from this field';
-                          }
-                          return null;
-                        },
-                        items: title
-                            .map((e) => DropdownMenuItem<String>(
-                                  child: Text(e),
-                                  value: e,
-                                ))
-                            .toList(),
-                        onChanged: (String? value) async {
-                          title4Selected = value!;
-                          SharedPreferences _prefs =
-                              await SharedPreferences.getInstance();
-                          _prefs.setString("title4SelectedH", value.toString());
-                        },
-                        decoration: InputDecoration(
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 5),
-                          hintStyle: GoogleFonts.dmSans(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15.sp,
-                            color: const Color(0xffACA9A9),
-                          ),
-                          fillColor: Colors.grey.shade200,
-                          filled: true,
-                          border: const OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8),
-                            ),
-                          ),
-                          enabledBorder: const OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8),
-                            ),
-                          ),
-                          focusedBorder: const OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      left: 20.w, right: 20.w, top: 30.h, bottom: 20.h),
-                  child: Row(
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {
-                            HealthConditions details = HealthConditions();
-                            if (status == true) {
-                              details.diabetes = '1';
-                            } else {
-                              details.diabetes = '0';
-                            }
-                            if (status1 == true) {
-                              details.circulatoryDisorder = '1';
-                            } else {
-                              details.circulatoryDisorder = '0';
-                            }
-                            if (status2 == true) {
-                              details.stomachDisorder = '1';
-                            } else {
-                              details.stomachDisorder = '0';
-                            }
-                            if (status5 == true) {
-                              details.anyOtherConditionThatMedicationStrictTimetable =
-                                  '1';
-                            } else {
-                              details.anyOtherConditionThatMedicationStrictTimetable =
-                                  '0';
-                            }
-                            if (status4 == true) {
-                              details.chronicChestDisorder = '1';
-                            } else {
-                              details.chronicChestDisorder = '0';
-                            }
-                            if (status3 == true) {
-                              details.deseaseDifficultyInSleep = '1';
-                            } else {
-                              details.deseaseDifficultyInSleep = '0';
-                            }
-                            if (status6 == true) {
-                              details.haveYouCovid19Symptoms = '1';
-                            } else {
-                              details.haveYouCovid19Symptoms = '0';
-                            }
-                            widget.model.healthConditions = details;
-                            if (month == 'January') {
-                              month = '01';
-                            } else if (month == 'February') {
-                              month = '02';
-                            } else if (month == 'March') {
-                              month = '03';
-                            } else if (month == 'April') {
-                              month = '04';
-                            } else if (month == 'May') {
-                              month = '05';
-                            } else if (month == 'June') {
-                              month = '06';
-                            } else if (month == 'July') {
-                              month = '07';
-                            } else if (month == 'August') {
-                              month = '08';
-                            } else if (month == 'September') {
-                              month = '09';
-                            } else if (month == 'October') {
-                              month = '10';
-                            } else if (month == 'November') {
-                              month = '11';
-                            } else if (month == 'December') {
-                              month = '12';
-                            }
-                            Covid19 detail = Covid19();
-                            detail.covid19Test = '$year-$month-$day';
-                            detail.tuberculosisVaccine = title1Selected;
-                            detail.careHomeBefore = title2Selected;
-                            detail.demantiaCareBefore = title3Selected;
-                            detail.drivingLicense = title4Selected;
-                            widget.model.covid19 = detail;
-                            Navigator.of(context).pop();
-                          },
-                          child: Container(
-                            height: 60.h,
-                            width: 300.w,
-                            decoration: BoxDecoration(
-                              color: Colors.blue,
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: const Center(
-                              child: Text(
-                                'Previous',
-                                style: TextStyle(
+                      Container(
+                        margin: EdgeInsets.only(left: 20.w, top: 15.h),
+                        child:
+                            const Text('Date of last negative COVID-19 test'),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsets.only(top: 10.h, left: 20.w, right: 20.w),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 50.h,
+                              width: 90.w,
+                              child: DropdownButtonFormField<String>(
+                                value: day,
+                                items: List.generate(
+                                    31,
+                                    (index) => DropdownMenuItem(
+                                          child: Text('${index + 1}'),
+                                          value: '${index + 1}',
+                                        )),
+                                onChanged: (String? value) async {
+                                  day = value!;
+                                  SharedPreferences _prefs =
+                                      await SharedPreferences.getInstance();
+                                  _prefs.setString("dayH", value.toString());
+                                  setState(() {});
+                                },
+                                decoration: InputDecoration(
+                                  contentPadding: const EdgeInsets.symmetric(
+                                      vertical: 5, horizontal: 5),
+                                  hintStyle: GoogleFonts.dmSans(
                                     fontWeight: FontWeight.w500,
-                                    color: Colors.white),
+                                    fontSize: 15.sp,
+                                    color: const Color(0xffACA9A9),
+                                  ),
+                                  fillColor: Colors.grey.shade200,
+                                  filled: true,
+                                  border: const OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(8),
+                                    ),
+                                  ),
+                                  enabledBorder: const OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(8),
+                                    ),
+                                  ),
+                                  focusedBorder: const OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(8),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 10.w),
+                            Container(
+                              height: 50.h,
+                              width: 140.w,
+                              decoration: BoxDecoration(
+                                color: Colors.grey.shade200,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: DropdownButtonFormField<String>(
+                                value: month,
+                                items: [
+                                  'January',
+                                  'February',
+                                  'March',
+                                  'April',
+                                  'May',
+                                  'June',
+                                  'July',
+                                  'August',
+                                  'September',
+                                  'October',
+                                  'November',
+                                  'December'
+                                ]
+                                    .map((e) => DropdownMenuItem(
+                                          child: Text('${e}'),
+                                          value: e,
+                                        ))
+                                    .toList(),
+                                onChanged: (String? value) async {
+                                  month = value!;
+                                  SharedPreferences _prefs =
+                                      await SharedPreferences.getInstance();
+                                  _prefs.setString("monthH", value.toString());
+                                  setState(() {});
+                                },
+                                decoration: InputDecoration(
+                                  contentPadding: const EdgeInsets.symmetric(
+                                      vertical: 5, horizontal: 5),
+                                  hintStyle: GoogleFonts.dmSans(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15.sp,
+                                    color: const Color(0xffACA9A9),
+                                  ),
+                                  fillColor: Colors.grey.shade200,
+                                  filled: true,
+                                  border: const OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(8),
+                                    ),
+                                  ),
+                                  enabledBorder: const OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(8),
+                                    ),
+                                  ),
+                                  focusedBorder: const OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(8),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 10.w),
+                            Container(
+                              height: 50.h,
+                              width: 100.w,
+                              decoration: BoxDecoration(
+                                color: Colors.grey.shade200,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: DropdownButtonFormField<String>(
+                                value: year,
+                                items: List.generate(
+                                    DateTime.now().year,
+                                    (index) => DropdownMenuItem(
+                                          child: Text(
+                                              '${DateTime.now().year - index}'),
+                                          value:
+                                              '${DateTime.now().year - index}',
+                                        )),
+                                onChanged: (String? value) async {
+                                  year = value!;
+
+                                  SharedPreferences _prefs =
+                                      await SharedPreferences.getInstance();
+                                  _prefs.setString("yearH", value.toString());
+                                  setState(() {});
+                                },
+                                decoration: InputDecoration(
+                                  contentPadding: const EdgeInsets.symmetric(
+                                      vertical: 5, horizontal: 5),
+                                  hintStyle: GoogleFonts.dmSans(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15.sp,
+                                    color: const Color(0xffACA9A9),
+                                  ),
+                                  fillColor: Colors.grey.shade200,
+                                  filled: true,
+                                  border: const OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(8),
+                                    ),
+                                  ),
+                                  enabledBorder: const OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(8),
+                                    ),
+                                  ),
+                                  focusedBorder: const OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(8),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 20.w, top: 15.h),
+                        child: const Text(
+                            'Have you ever had tuberculosis(TB) vaccine'),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 20.w, right: 20.w),
+                        child: DropdownButtonFormField<String>(
+                          value: title1Selected,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Please select from this field';
+                            }
+                            return null;
+                          },
+                          items: title
+                              .map((e) => DropdownMenuItem<String>(
+                                    child: Text(e),
+                                    value: e,
+                                  ))
+                              .toList(),
+                          onChanged: (String? value) async {
+                            title1Selected = value!;
+
+                            SharedPreferences _prefs =
+                                await SharedPreferences.getInstance();
+                            _prefs.setString(
+                                "title1SelectedH", value.toString());
+                          },
+                          decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 5),
+                            hintStyle: GoogleFonts.dmSans(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15.sp,
+                              color: const Color(0xffACA9A9),
+                            ),
+                            fillColor: Colors.grey.shade200,
+                            filled: true,
+                            border: const OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                            ),
+                            enabledBorder: const OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                            ),
+                            focusedBorder: const OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
                               ),
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(width: 10.w),
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {
-                            HealthConditions details = HealthConditions();
-                            if (status == true) {
-                              details.diabetes = '1';
-                            } else {
-                              details.diabetes = '0';
+                      Container(
+                        margin: EdgeInsets.only(left: 20.w, top: 15.h),
+                        child: const Text(
+                            'Have you worked in a care home before?'),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 20.w, right: 20.w),
+                        child: DropdownButtonFormField<String>(
+                          value: title2Selected,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Please select from this field';
                             }
-                            if (status1 == true) {
-                              details.circulatoryDisorder = '1';
-                            } else {
-                              details.circulatoryDisorder = '0';
-                            }
-                            if (status2 == true) {
-                              details.stomachDisorder = '1';
-                            } else {
-                              details.stomachDisorder = '0';
-                            }
-                            if (status5 == true) {
-                              details.anyOtherConditionThatMedicationStrictTimetable =
-                                  '1';
-                            } else {
-                              details.anyOtherConditionThatMedicationStrictTimetable =
-                                  '0';
-                            }
-                            if (status4 == true) {
-                              details.chronicChestDisorder = '1';
-                            } else {
-                              details.chronicChestDisorder = '0';
-                            }
-                            if (status3 == true) {
-                              details.deseaseDifficultyInSleep = '1';
-                            } else {
-                              details.deseaseDifficultyInSleep = '0';
-                            }
-                            if (status6 == true) {
-                              details.haveYouCovid19Symptoms = '1';
-                            } else {
-                              details.haveYouCovid19Symptoms = '0';
-                            }
-                            widget.model.healthConditions = details;
-                            if (month == 'January') {
-                              month = '01';
-                            } else if (month == 'February') {
-                              month = '02';
-                            } else if (month == 'March') {
-                              month = '03';
-                            } else if (month == 'April') {
-                              month = '04';
-                            } else if (month == 'May') {
-                              month = '05';
-                            } else if (month == 'June') {
-                              month = '06';
-                            } else if (month == 'July') {
-                              month = '07';
-                            } else if (month == 'August') {
-                              month = '08';
-                            } else if (month == 'September') {
-                              month = '09';
-                            } else if (month == 'October') {
-                              month = '10';
-                            } else if (month == 'November') {
-                              month = '11';
-                            } else if (month == 'December') {
-                              month = '12';
-                            }
-                            Covid19 detail = Covid19();
-                            detail.covid19Test = '$year-$month-$day';
-                            detail.tuberculosisVaccine = title1Selected;
-                            detail.careHomeBefore = title2Selected;
-                            detail.demantiaCareBefore = title3Selected;
-                            detail.drivingLicense = title4Selected;
-                            widget.model.covid19 = detail;
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    WorkingTimePage(model: widget.model),
-                              ),
-                            );
+                            return null;
                           },
-                          child: Container(
-                            height: 60.h,
-                            width: 300.w,
-                            decoration: BoxDecoration(
-                              color: Colors.pink,
-                              borderRadius: BorderRadius.circular(5),
+                          items: title
+                              .map((e) => DropdownMenuItem<String>(
+                                    child: Text(e),
+                                    value: e,
+                                  ))
+                              .toList(),
+                          onChanged: (String? value) async {
+                            title2Selected = value!;
+                            SharedPreferences _prefs =
+                                await SharedPreferences.getInstance();
+                            _prefs.setString(
+                                "title2SelectedH", value.toString());
+                          },
+                          decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 5),
+                            hintStyle: GoogleFonts.dmSans(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15.sp,
+                              color: const Color(0xffACA9A9),
                             ),
-                            child: const Center(
-                              child: Text(
-                                'Next',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white),
+                            fillColor: Colors.grey.shade200,
+                            filled: true,
+                            border: const OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                            ),
+                            enabledBorder: const OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                            ),
+                            focusedBorder: const OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 20.w, top: 15.h),
+                        child: const Text(
+                            'Have you worked in demantia care before?'),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 20.w, right: 20.w),
+                        child: DropdownButtonFormField<String>(
+                          value: title3Selected,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Please select from this field';
+                            }
+                            return null;
+                          },
+                          items: title
+                              .map((e) => DropdownMenuItem<String>(
+                                    child: Text(e),
+                                    value: e,
+                                  ))
+                              .toList(),
+                          onChanged: (String? value) async {
+                            title3Selected = value!;
+                            SharedPreferences _prefs =
+                                await SharedPreferences.getInstance();
+                            _prefs.setString(
+                                "title3SelectedH", value.toString());
+                          },
+                          decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 5),
+                            hintStyle: GoogleFonts.dmSans(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15.sp,
+                              color: const Color(0xffACA9A9),
+                            ),
+                            fillColor: Colors.grey.shade200,
+                            filled: true,
+                            border: const OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                            ),
+                            enabledBorder: const OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                            ),
+                            focusedBorder: const OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 20.w, top: 15.h),
+                        child: const Text('Do you have a driving license?'),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 20.w, right: 20.w),
+                        child: DropdownButtonFormField<String>(
+                          value: title4Selected,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Please select from this field';
+                            }
+                            return null;
+                          },
+                          items: title
+                              .map((e) => DropdownMenuItem<String>(
+                                    child: Text(e),
+                                    value: e,
+                                  ))
+                              .toList(),
+                          onChanged: (String? value) async {
+                            title4Selected = value!;
+                            SharedPreferences _prefs =
+                                await SharedPreferences.getInstance();
+                            _prefs.setString(
+                                "title4SelectedH", value.toString());
+                          },
+                          decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 5),
+                            hintStyle: GoogleFonts.dmSans(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15.sp,
+                              color: const Color(0xffACA9A9),
+                            ),
+                            fillColor: Colors.grey.shade200,
+                            filled: true,
+                            border: const OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                            ),
+                            enabledBorder: const OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                            ),
+                            focusedBorder: const OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
                               ),
                             ),
                           ),
@@ -1431,8 +1239,210 @@ class _CheckBoxTestState extends State<CheckBoxTest> {
                       ),
                     ],
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: EdgeInsets.only(
+                        left: 20.w, right: 20.w, top: 30.h, bottom: 20.h),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: InkWell(
+                            onTap: () {
+                              HealthConditions details = HealthConditions();
+                              if (status == true) {
+                                details.diabetes = '1';
+                              } else {
+                                details.diabetes = '0';
+                              }
+                              if (status1 == true) {
+                                details.circulatoryDisorder = '1';
+                              } else {
+                                details.circulatoryDisorder = '0';
+                              }
+                              if (status2 == true) {
+                                details.stomachDisorder = '1';
+                              } else {
+                                details.stomachDisorder = '0';
+                              }
+                              if (status5 == true) {
+                                details.anyOtherConditionThatMedicationStrictTimetable =
+                                    '1';
+                              } else {
+                                details.anyOtherConditionThatMedicationStrictTimetable =
+                                    '0';
+                              }
+                              if (status4 == true) {
+                                details.chronicChestDisorder = '1';
+                              } else {
+                                details.chronicChestDisorder = '0';
+                              }
+                              if (status3 == true) {
+                                details.deseaseDifficultyInSleep = '1';
+                              } else {
+                                details.deseaseDifficultyInSleep = '0';
+                              }
+                              if (status6 == true) {
+                                details.haveYouCovid19Symptoms = '1';
+                              } else {
+                                details.haveYouCovid19Symptoms = '0';
+                              }
+                              widget.model.healthConditions = details;
+                              if (month == 'January') {
+                                month = '01';
+                              } else if (month == 'February') {
+                                month = '02';
+                              } else if (month == 'March') {
+                                month = '03';
+                              } else if (month == 'April') {
+                                month = '04';
+                              } else if (month == 'May') {
+                                month = '05';
+                              } else if (month == 'June') {
+                                month = '06';
+                              } else if (month == 'July') {
+                                month = '07';
+                              } else if (month == 'August') {
+                                month = '08';
+                              } else if (month == 'September') {
+                                month = '09';
+                              } else if (month == 'October') {
+                                month = '10';
+                              } else if (month == 'November') {
+                                month = '11';
+                              } else if (month == 'December') {
+                                month = '12';
+                              }
+                              Covid19 detail = Covid19();
+                              detail.covid19Test = '$year-$month-$day';
+                              detail.tuberculosisVaccine = title1Selected;
+                              detail.careHomeBefore = title2Selected;
+                              detail.demantiaCareBefore = title3Selected;
+                              detail.drivingLicense = title4Selected;
+                              widget.model.covid19 = detail;
+                              Navigator.of(context).pop();
+                            },
+                            child: Container(
+                              height: 60.h,
+                              width: 300.w,
+                              decoration: BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: const Center(
+                                child: Text(
+                                  'Previous',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10.w),
+                        Expanded(
+                          child: InkWell(
+                            onTap: () {
+                              HealthConditions details = HealthConditions();
+                              if (status == true) {
+                                details.diabetes = '1';
+                              } else {
+                                details.diabetes = '0';
+                              }
+                              if (status1 == true) {
+                                details.circulatoryDisorder = '1';
+                              } else {
+                                details.circulatoryDisorder = '0';
+                              }
+                              if (status2 == true) {
+                                details.stomachDisorder = '1';
+                              } else {
+                                details.stomachDisorder = '0';
+                              }
+                              if (status5 == true) {
+                                details.anyOtherConditionThatMedicationStrictTimetable =
+                                    '1';
+                              } else {
+                                details.anyOtherConditionThatMedicationStrictTimetable =
+                                    '0';
+                              }
+                              if (status4 == true) {
+                                details.chronicChestDisorder = '1';
+                              } else {
+                                details.chronicChestDisorder = '0';
+                              }
+                              if (status3 == true) {
+                                details.deseaseDifficultyInSleep = '1';
+                              } else {
+                                details.deseaseDifficultyInSleep = '0';
+                              }
+                              if (status6 == true) {
+                                details.haveYouCovid19Symptoms = '1';
+                              } else {
+                                details.haveYouCovid19Symptoms = '0';
+                              }
+                              widget.model.healthConditions = details;
+                              if (month == 'January') {
+                                month = '01';
+                              } else if (month == 'February') {
+                                month = '02';
+                              } else if (month == 'March') {
+                                month = '03';
+                              } else if (month == 'April') {
+                                month = '04';
+                              } else if (month == 'May') {
+                                month = '05';
+                              } else if (month == 'June') {
+                                month = '06';
+                              } else if (month == 'July') {
+                                month = '07';
+                              } else if (month == 'August') {
+                                month = '08';
+                              } else if (month == 'September') {
+                                month = '09';
+                              } else if (month == 'October') {
+                                month = '10';
+                              } else if (month == 'November') {
+                                month = '11';
+                              } else if (month == 'December') {
+                                month = '12';
+                              }
+                              Covid19 detail = Covid19();
+                              detail.covid19Test = '$year-$month-$day';
+                              detail.tuberculosisVaccine = title1Selected;
+                              detail.careHomeBefore = title2Selected;
+                              detail.demantiaCareBefore = title3Selected;
+                              detail.drivingLicense = title4Selected;
+                              widget.model.covid19 = detail;
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      WorkingTimePage(model: widget.model),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              height: 60.h,
+                              width: 300.w,
+                              decoration: BoxDecoration(
+                                color: Colors.pink,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: const Center(
+                                child: Text(
+                                  'Next',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

@@ -5,7 +5,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:pixel_app/Application_Form/Model/ApplicationFormModel.dart';
 import 'package:pixel_app/Model/AccademicCertModel.dart';
 import 'package:pixel_app/Model/AccademicQualModel.dart';
 import 'package:pixel_app/Model/NmcModel.dart';
@@ -46,12 +45,15 @@ class AuthController {
   LoginAccount({var email, var password, scaffoldKey, context}) async {
     var response = await http.post(
         Uri.parse('$baseUrl/api/user/login?email=$email&password=$password'));
-    print(response.body);
+    // print(response.body);
     if (response.statusCode == 200) {
       if (jsonDecode(response.body)['message'] == 'Login Successfuly.') {
+        // print("***********************${response.body}");
         SharedPreferences pref = await SharedPreferences.getInstance();
         await pref.setBool('Logined', true);
         pref.setString('token', jsonDecode(response.body)['token']);
+        pref.setString(
+            'profileStatus', jsonDecode(response.body)['data']['status']);
         pref.setString('userPersonalInfo', response.body);
         Map<String, dynamic> itr = jsonDecode(response.body);
         UserAccountinfo usr = UserAccountinfo.fromJson(itr);
@@ -59,10 +61,12 @@ class AuthController {
       }
       SharedPreferences pref = await SharedPreferences.getInstance();
 
-      String? tt = await pref.getString("token");
+      // String? tt = await pref.getString("token");
+      // String? profileS = await pref.getString("profileStatus");
 
-      print("890890 ${tt}");
-      print("hhhhh${jsonDecode(response.body)['token']}");
+      // print("890890 ${tt}");
+      // print("*************************  ${profileS}");
+      // print("hhhhh${jsonDecode(response.body)['token']}");
       return jsonDecode(response.body)['message'];
     } else {
       return 'Login Failed';
@@ -89,39 +93,21 @@ class AuthController {
   }
 
   Future<UserModel> GetUserData() async {
-    // SharedPreferences pref = await SharedPreferences.getInstance();
-    // var userData_snap = pref.getString('userPersonalInfo');
-    // print(userData_snap);
-    // return UserModel.fromJson(jsonDecode(userData_snap!));
-
     SharedPreferences pref = await SharedPreferences.getInstance();
     var token = pref.getString('token');
     print("ttt$token");
+
     var headers = {'Authorization': 'Bearer $token'};
-
-    var request = http.Request(
-      'GET',
-      Uri.parse(
-        '$baseUrl/api/user/get',
-      ),
-    );
-
-    request.headers.addAll(headers);
-
-    http.StreamedResponse response = await request.send();
+    var response =
+        await http.get(Uri.parse('$baseUrl/api/user/get'), headers: headers);
 
     if (response.statusCode == 200) {
-      return UserModel.fromJson(
-          jsonDecode(await response.stream.bytesToString()));
-      // print("||||||||||||||||||||||||||||||||||");
-      // print(await response.stream.bytesToString());
-      // print("||||||||||||||||||||||||||||||||||");
+      // debugPrint("NewsFormApi${response.body}");
+      return UserModel.fromJson(jsonDecode(response.body));
     } else {
-      print(response.reasonPhrase);
+      // debugPrint(response.reasonPhrase);
+      return UserModel();
     }
-
-    return UserModel.fromJson(
-        jsonDecode(await response.stream.bytesToString()));
   }
 
   Future UpdateProfile(
@@ -137,7 +123,7 @@ class AuthController {
     var token = pref.getString('token');
 
     var headers = {'Authorization': 'Bearer $token'};
-    print(headers);
+    // print(headers);
     // print(model!.toJson());
     var request =
         http.MultipartRequest('POST', Uri.parse('$baseUrl/api/user/update'));
@@ -527,4 +513,9 @@ class AuthController {
       }
     } catch (e) {}
   }
+
+  // Future<FormModel> GetFormData() async {
+  //   SharedPreferences pref = await SharedPreferences.getInstance();
+  //   var token = pref.getString('token');
+  // }
 }

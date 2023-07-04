@@ -1155,35 +1155,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     //       'Login',
                     //       style: TextStyle(fontSize: 16.sp),
                     //     )),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: 20.w, right: 20.w, bottom: 20.h),
-                      child: InkWell(
-                        onTap: () async {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const SignUpPage()),
-                          );
-                        },
-                        child: Container(
-                          height: 60.h,
-                          width: 600.w,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Login',
-                              style: TextStyle(
-                                  fontSize: 16.sp, color: Colors.white),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 20.h),
+
                     Padding(
                       padding: EdgeInsets.only(
                           left: 20.w, right: 20.w, bottom: 20.h),
@@ -1270,6 +1242,37 @@ class _RegisterPageState extends State<RegisterPage> {
                                           confirmpassword.text != ""
                                       ? Colors.white
                                       : Colors.black),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 20.w, right: 20.w, bottom: 20.h),
+                      child: InkWell(
+                        onTap: () async {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignUpPage()),
+                          );
+                        },
+                        child: Container(
+                          height: 60.h,
+                          width: 600.w,
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Login',
+                              style: TextStyle(
+                                  fontSize: 16.sp, color: Colors.white),
                             ),
                           ),
                         ),

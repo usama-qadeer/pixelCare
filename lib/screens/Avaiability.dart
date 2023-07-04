@@ -409,6 +409,16 @@ class AvailabilityView extends StatefulWidget {
 }
 
 class _AvailabilityViewState extends State<AvailabilityView> {
+  List title = [
+    'Registered Nurse (RGN)',
+    'Registered Mental Nurse (RMN)',
+    'Senior Carer',
+    'Health Care Assistant (HCA)',
+    'Kitchen Assistant',
+    'Chef',
+    'Admin'
+  ];
+  var titleSelected = 'Registered Nurse (RGN)';
   var dateId = 32;
 
   int selectedDateId = 0;
@@ -453,11 +463,75 @@ class _AvailabilityViewState extends State<AvailabilityView> {
                 ),
               ),
               SizedBox(width: 5.w),
+              ////For Postion
+              ///
+
+              // Container(
+              //   margin: EdgeInsets.only(left: 20.w),
+              //   child: const Text('Position'),
+              // ),
+              // Padding(
+              //   padding: EdgeInsets.only(left: 20.w, right: 20.w),
+              //   child: DropdownButtonFormField<String>(
+              //     value: titleSelected,
+              //     validator: (value) {
+              //       if (value!.isEmpty) {
+              //         return 'Please select from this field';
+              //       }
+              //       return null;
+              //     },
+              //     items: title
+              //         .map((e) => DropdownMenuItem<String>(
+              //               value: e,
+              //               child: Text(e),
+              //             ))
+              //         .toList(),
+              //     onChanged: (String? value) {
+              //       setState(() async {
+              //         SharedPreferences prefs =
+              //             await SharedPreferences.getInstance();
+              //         titleSelected = value!;
+              //         prefs.setString("rgn", value);
+              //         setState(() {});
+              //       });
+              //     },
+              //     decoration: InputDecoration(
+              //       contentPadding:
+              //           const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+              //       hintStyle: GoogleFonts.dmSans(
+              //         fontWeight: FontWeight.w500,
+              //         fontSize: 15.sp,
+              //         color: const Color(0xffACA9A9),
+              //       ),
+              //       fillColor: Colors.grey.shade200,
+              //       filled: true,
+              //       border: const OutlineInputBorder(
+              //         borderSide: BorderSide.none,
+              //         borderRadius: BorderRadius.all(
+              //           Radius.circular(8),
+              //         ),
+              //       ),
+              //       enabledBorder: const OutlineInputBorder(
+              //         borderSide: BorderSide.none,
+              //         borderRadius: BorderRadius.all(
+              //           Radius.circular(8),
+              //         ),
+              //       ),
+              //       focusedBorder: const OutlineInputBorder(
+              //         borderSide: BorderSide.none,
+              //         borderRadius: BorderRadius.all(
+              //           Radius.circular(8),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
               StreamBuilder<AvailbilityModel?>(
                   stream: AvailabilityController()
                       .GetAvail(
                           month: _selectedDay.month, year: _selectedDay.year)
-                      .asStream(),
+                      .asStream()
+                      .asBroadcastStream(),
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       Data data = Data(

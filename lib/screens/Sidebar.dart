@@ -63,21 +63,39 @@ class _SidebarPageState extends State<SidebarPage> {
                                   },
                                   child: Row(
                                     children: [
-                                      Container(
-                                        margin: EdgeInsets.only(left: 10.w),
-                                        height: 50.h,
-                                        width: 50,
-                                        decoration: BoxDecoration(
-                                          color: const Color(0xfffaeaea),
-                                          borderRadius:
-                                              BorderRadius.circular(5),
-                                          image: DecorationImage(
-                                            image: NetworkImage(
-                                                '${snapshot.data?.data?.avatar}'),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ),
+                                      snapshot.data?.data!.avatar == null
+                                          ? Container(
+                                              margin:
+                                                  EdgeInsets.only(left: 10.w),
+                                              height: 50.h,
+                                              width: 50,
+                                              decoration: BoxDecoration(
+                                                //  color: const Color(0xfffaeaea),
+                                                borderRadius:
+                                                    BorderRadius.circular(5),
+                                                image: DecorationImage(
+                                                  image: AssetImage(
+                                                      "assets/avatar.png"),
+                                                  fit: BoxFit.fill,
+                                                ),
+                                              ),
+                                            )
+                                          : Container(
+                                              margin:
+                                                  EdgeInsets.only(left: 10.w),
+                                              height: 50.h,
+                                              width: 50,
+                                              decoration: BoxDecoration(
+                                                color: const Color(0xfffaeaea),
+                                                borderRadius:
+                                                    BorderRadius.circular(5),
+                                                image: DecorationImage(
+                                                  image: NetworkImage(
+                                                      '${snapshot.data?.data?.avatar}'),
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                            ),
                                       SizedBox(width: 10.w),
                                       Padding(
                                         padding: EdgeInsets.only(top: 10.h),
@@ -153,7 +171,7 @@ class _SidebarPageState extends State<SidebarPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const StartingFormPage(),
+                          builder: (context) => StartingFormPage(),
                         ),
                       );
                     },
@@ -259,6 +277,9 @@ class _SidebarPageState extends State<SidebarPage> {
                       pref.setBool('Logined', false);
                       // pref.setString('token', 'asdf');
                       pref.remove('token');
+                      pref.remove("profileStatus");
+                      //  pref.remove("Submitted");
+
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(

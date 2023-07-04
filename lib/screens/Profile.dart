@@ -147,26 +147,25 @@ class _ProfilePageState extends State<ProfilePage> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Container(
-                                      child: CircleAvatar(
-                                        radius: 60.r,
-                                        backgroundColor: Colors.grey.shade300,
-                                        backgroundImage: NetworkImage(
-                                            '${snapshot.data?.data?.avatar ?? Shimmer.fromColors(
-                                                  baseColor: Colors.red,
-                                                  highlightColor: Colors.yellow,
-                                                  child: Text(
-                                                    'Shimmer',
-                                                    textAlign: TextAlign.center,
-                                                    style: TextStyle(
-                                                      fontSize: 40.0,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
-                                                  ),
-                                                )}'),
-                                      ),
-                                    ),
+                                    snapshot.data?.data!.avatar == null
+                                        ? Container(
+                                            child: CircleAvatar(
+                                              radius: 60.r,
+                                              backgroundColor:
+                                                  Colors.grey.shade300,
+                                              backgroundImage: AssetImage(
+                                                  "assets/avatar.png"),
+                                            ),
+                                          )
+                                        : Container(
+                                            child: CircleAvatar(
+                                              radius: 60.r,
+                                              backgroundColor:
+                                                  Colors.grey.shade300,
+                                              backgroundImage: NetworkImage(
+                                                  '${snapshot.data!.data!.avatar}'),
+                                            ),
+                                          ),
 
                                     // Container(
                                     //   height: 100.h,

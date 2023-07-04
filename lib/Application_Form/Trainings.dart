@@ -13,12 +13,13 @@ import '../Model/AccademicCertModel.dart';
 import 'Model/ApplicationFormModel.dart';
 
 class TrainingPage extends StatefulWidget {
-  TrainingPage({required this.model});
   ApplicationFormModel model = new ApplicationFormModel();
+  TrainingPage({required this.model});
   @protected
   @mustCallSuper
   void initState() {
     hide();
+    print("checkingnullvalue${model}");
     model1 = this.model;
   }
 

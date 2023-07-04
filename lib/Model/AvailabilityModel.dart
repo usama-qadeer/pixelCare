@@ -3,7 +3,7 @@
 class AvailbilityModel {
   int? status;
   String? message;
-  int? userId;
+  var userId;
   List<Data> data = [];
 
   AvailbilityModel(

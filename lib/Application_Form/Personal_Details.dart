@@ -535,10 +535,10 @@ class _PersonalDetailPageState extends State<PersonalDetailPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 20.w, top: 15.h),
-                          child: const Text('Title'),
-                        ),
+                        // Container(
+                        //   margin: EdgeInsets.only(left: 20.w, top: 15.h),
+                        //   child: const Text('Title'),
+                        // ),
                         // Padding(
                         //   padding: EdgeInsets.only(left: 20.w, right: 20.w),
                         //   child: DropdownButtonFormField(
@@ -910,6 +910,7 @@ class _PersonalDetailPageState extends State<PersonalDetailPage> {
                             ],
                           ),
                         ),
+
                         Row(
                           children: [
                             Expanded(

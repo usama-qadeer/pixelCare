@@ -8,8 +8,8 @@ import '../Constants/Constant.dart';
 import 'Model/ApplicationFormModel.dart';
 
 class WorkingTimePage extends StatefulWidget {
-  WorkingTimePage({required this.model});
   ApplicationFormModel model = new ApplicationFormModel();
+  WorkingTimePage({required this.model});
 
   @override
   State<WorkingTimePage> createState() => _WorkingTimePageState();
@@ -38,6 +38,10 @@ class _WorkingTimePageState extends State<WorkingTimePage> {
   @override
   void initState() {
     _SetVals();
+    print("***********");
+    print(widget.model.toJson());
+    print("***********");
+
     widget.model.timeRegulations?.doNotOtpOut == 0 ? grp = 1 : grp = 0;
     // TODO: implement initState
     hide();

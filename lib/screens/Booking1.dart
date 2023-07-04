@@ -191,7 +191,7 @@ class _Booking1PageState extends State<Booking1Page> {
                             height: MediaQuery.of(context).size.height * 0.8,
                             width: MediaQuery.of(context).size.width,
                             child: StreamBuilder<BookingModel>(
-                                stream: confirm?.asStream(),
+                                stream: confirm?.asStream().asBroadcastStream(),
                                 builder: (context, snapshot) {
                                   if (snapshot.hasData) {
                                     if (snapshot.data?.data == null) {
@@ -206,10 +206,14 @@ class _Booking1PageState extends State<Booking1Page> {
                                           itemCount:
                                               snapshot.data?.data?.length,
                                           itemBuilder: (context, index) {
-
-                                            var shiftDetailsStartTime = "${snapshot.data?.data?.elementAt(index).timeStart.toString()} :  ";
-                                            var shiftDetailsEndTime = "${snapshot.data?.data?.elementAt(index).timeEnd.toString()} :  ";
-
+                                            var shiftDetailsStartTime =
+                                                "${snapshot.data?.data?.elementAt(index).timeStart.toString()} :  ";
+                                            var shiftDetailsEndTime =
+                                                "${snapshot.data?.data?.elementAt(index).timeEnd.toString()} :  ";
+                                            var shiftDate =
+                                                "${snapshot.data?.data?.elementAt(index).date.toString()}: ";
+                                            var endDate =
+                                                "${snapshot.data?.data?.elementAt(index).jobEndDate.toString()}";
                                             return Padding(
                                               padding: EdgeInsets.only(
                                                   left: 20.w,
@@ -284,21 +288,42 @@ class _Booking1PageState extends State<Booking1Page> {
                                                                       .width *
                                                                   0.5,
                                                               child: Text(
-                                                                'Shift Details: ${shiftDetailsStartTime.substring(0, 5)} - ${shiftDetailsEndTime.substring(0, 5)}',
+                                                                'Start Date: ${shiftDate.substring(0, 10)}',
                                                                 style: TextStyle(
-                                                                    color: const Color(
-                                                                        0xff687bb9),
+                                                                    color: Colors
+                                                                        .pink,
                                                                     fontSize:
                                                                         17.sp),
                                                               ),
                                                             ),
                                                             Text(
-                                                              '${snapshot.data?.data?.elementAt(index).date} - ${snapshot.data?.data?.elementAt(index).jobEndDate}',
+                                                              'End Date: ${endDate}',
                                                               style: TextStyle(
                                                                   color: Colors
-                                                                      .grey,
+                                                                      .pink,
                                                                   fontSize:
                                                                       17.sp),
+                                                            ),
+                                                            Row(
+                                                              children: [
+                                                                Icon(
+                                                                  Icons
+                                                                      .access_time,
+                                                                  color: const Color(
+                                                                      0xff687bb9),
+                                                                  size: 20.sp,
+                                                                ),
+                                                                SizedBox(
+                                                                    width: 5.w),
+                                                                Text(
+                                                                  '${snapshot.data?.data?.elementAt(index).timeStart}-${snapshot.data?.data?.elementAt(index).timeEnd}',
+                                                                  style:
+                                                                      const TextStyle(
+                                                                    color: Color(
+                                                                        0xff687bb9),
+                                                                  ),
+                                                                ),
+                                                              ],
                                                             ),
 
                                                             /// will change it
@@ -399,7 +424,8 @@ class _Booking1PageState extends State<Booking1Page> {
                             height: MediaQuery.of(context).size.height * 0.8,
                             width: MediaQuery.of(context).size.width,
                             child: StreamBuilder<BookingModel>(
-                                stream: unconfirm?.asStream(),
+                                stream:
+                                    unconfirm?.asStream().asBroadcastStream(),
                                 builder: (context, snapshot) {
                                   if (snapshot.hasData) {
                                     if (snapshot.data?.data == null) {
@@ -414,10 +440,14 @@ class _Booking1PageState extends State<Booking1Page> {
                                           itemCount:
                                               snapshot.data!.data!.length,
                                           itemBuilder: (context, index) {
-
-                                            var shiftDetailsStartTime = "${snapshot.data?.data?.elementAt(index).timeStart.toString()} :  ";
-                                            var shiftDetailsEndTime = "${snapshot.data?.data?.elementAt(index).timeEnd.toString()} :  ";
-
+                                            var shiftDetailsStartTime =
+                                                "${snapshot.data?.data?.elementAt(index).timeStart.toString()} :  ";
+                                            var shiftDetailsEndTime =
+                                                "${snapshot.data?.data?.elementAt(index).timeEnd.toString()} :  ";
+                                            var shiftDate =
+                                                "${snapshot.data?.data?.elementAt(index).date.toString()}: ";
+                                            var endDate =
+                                                "${snapshot.data?.data?.elementAt(index).jobEndDate.toString()}";
                                             return Padding(
                                               padding: EdgeInsets.only(
                                                   left: 20.w,
@@ -553,13 +583,21 @@ class _Booking1PageState extends State<Booking1Page> {
                                                                       .width *
                                                                   0.5,
                                                               child: Text(
-                                                                'Shift Details: ${shiftDetailsStartTime.substring(0, 5)} - ${shiftDetailsStartTime.substring(0, 5)}',
+                                                                'Start Date: ${shiftDate.substring(0, 10)}',
                                                                 style: TextStyle(
-                                                                    color: const Color(
-                                                                        0xff687bb9),
+                                                                    color: Colors
+                                                                        .pink,
                                                                     fontSize:
                                                                         17.sp),
                                                               ),
+                                                            ),
+                                                            Text(
+                                                              'End Date: ${endDate}',
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .pink,
+                                                                  fontSize:
+                                                                      17.sp),
                                                             ),
                                                             // child: Text(
                                                             //   '${snapshot.data?.data?.elementAt(index).description}',

@@ -15,7 +15,8 @@ class Messages extends StatelessWidget {
       stream: FirebaseFirestore.instance
           .collection('chat')
           .orderBy('createdAt', descending: true)
-          .snapshots(),
+          .snapshots()
+          .asBroadcastStream(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(

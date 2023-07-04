@@ -74,265 +74,268 @@ class _AddressPageState extends State<AddressPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey.shade50,
-      body: Form(
-        key: formKey,
-        child: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  padding: EdgeInsets.only(top: 40.h, left: 10.w),
-                  child: Column(
-                    //mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Address',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w700, fontSize: 20),
-                      ),
-                      SizedBox(height: 10.h),
-                      Text(
-                        'Address of last five years if changed',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: Colors.grey,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.grey.shade50,
+        body: Form(
+          key: formKey,
+          child: SafeArea(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(top: 40.h, left: 10.w),
+                    child: Column(
+                      //mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Address',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 20),
                         ),
-                      ),
-                    ],
+                        SizedBox(height: 10.h),
+                        Text(
+                          'Address of last five years if changed',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                SizedBox(height: 20.h),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  height: 30.h,
-                  child: Row(
+                  SizedBox(height: 20.h),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    height: 30.h,
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 20.h,
+                          width: 20.w,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.red,
+                          ),
+                          child: Icon(
+                            Icons.done,
+                            color: Colors.blue.shade200,
+                            size: 20.sp,
+                          ),
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 20.h,
+                          width: 20.w,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.red,
+                          ),
+                          child: Icon(
+                            Icons.done,
+                            color: Colors.white,
+                            size: 20.sp,
+                          ),
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 10.h,
+                          width: 10.w,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.blue.shade200,
+                          ),
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 10.h,
+                          width: 10.w,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.blue.shade200,
+                          ),
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 10.h,
+                          width: 10.w,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.blue.shade200,
+                          ),
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 10.h,
+                          width: 10.w,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.blue.shade200,
+                          ),
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 10.h,
+                          width: 10.w,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.blue.shade200,
+                          ),
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 10.h,
+                          width: 10.w,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.blue.shade200,
+                          ),
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 10.h,
+                          width: 10.w,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.blue.shade200,
+                          ),
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 10.h,
+                          width: 10.w,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.blue.shade200,
+                          ),
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 10.h,
+                          width: 10.w,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.blue.shade200,
+                          ),
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 10.h,
+                          width: 10.w,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.blue.shade200,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 10.h),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        height: 20.h,
-                        width: 20.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.red,
-                        ),
-                        child: Icon(
-                          Icons.done,
-                          color: Colors.blue.shade200,
-                          size: 20.sp,
-                        ),
+                        margin: EdgeInsets.only(left: 20.w, top: 15.h),
+                        child: Text('House Number'),
                       ),
-                      Spacer(),
+                      MyTextField(
+                        controller: house,
+                        decoration: InputDecoration(),
+                        hinttext: 'Enter house number',
+                      ),
                       Container(
-                        height: 20.h,
-                        width: 20.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.red,
-                        ),
-                        child: Icon(
-                          Icons.done,
-                          color: Colors.white,
-                          size: 20.sp,
-                        ),
+                        margin: EdgeInsets.only(left: 20.w, top: 15.h),
+                        child: Text('Postal Code'),
                       ),
-                      Spacer(),
+                      MyTextField(
+                        controller: code,
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(),
+                        hinttext: 'Enter postal code',
+                      ),
                       Container(
-                        height: 10.h,
-                        width: 10.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.blue.shade200,
-                        ),
+                        margin: EdgeInsets.only(left: 20.w, top: 15.h),
+                        child: Text('Address'),
                       ),
-                      Spacer(),
-                      Container(
-                        height: 10.h,
-                        width: 10.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.blue.shade200,
-                        ),
+                      MyTextField(
+                        controller: address,
+                        decoration: InputDecoration(),
+                        hinttext: 'Enter address',
                       ),
-                      Spacer(),
-                      Container(
-                        height: 10.h,
-                        width: 10.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.blue.shade200,
-                        ),
-                      ),
-                      Spacer(),
-                      Container(
-                        height: 10.h,
-                        width: 10.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.blue.shade200,
-                        ),
-                      ),
-                      Spacer(),
-                      Container(
-                        height: 10.h,
-                        width: 10.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.blue.shade200,
-                        ),
-                      ),
-                      Spacer(),
-                      Container(
-                        height: 10.h,
-                        width: 10.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.blue.shade200,
-                        ),
-                      ),
-                      Spacer(),
-                      Container(
-                        height: 10.h,
-                        width: 10.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.blue.shade200,
-                        ),
-                      ),
-                      Spacer(),
-                      Container(
-                        height: 10.h,
-                        width: 10.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.blue.shade200,
-                        ),
-                      ),
-                      Spacer(),
-                      Container(
-                        height: 10.h,
-                        width: 10.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.blue.shade200,
-                        ),
-                      ),
-                      Spacer(),
-                      Container(
-                        height: 10.h,
-                        width: 10.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.blue.shade200,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 10.h),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(left: 20.w, top: 15.h),
-                      child: Text('House Number'),
-                    ),
-                    MyTextField(
-                      controller: house,
-                      decoration: InputDecoration(),
-                      hinttext: 'Enter house number',
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 20.w, top: 15.h),
-                      child: Text('Postal Code'),
-                    ),
-                    MyTextField(
-                      controller: code,
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(),
-                      hinttext: 'Enter postal code',
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 20.w, top: 15.h),
-                      child: Text('Address'),
-                    ),
-                    MyTextField(
-                      controller: address,
-                      decoration: InputDecoration(),
-                      hinttext: 'Enter address',
-                    ),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.3),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: 20.w, right: 20.w, bottom: 20.h),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: Container(
-                                height: 60.h,
-                                width: 300.w,
-                                decoration: BoxDecoration(
-                                  color: Colors.blue.shade100,
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'Previous',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.grey.shade500),
+                      SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.3),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: 20.w, right: 20.w, bottom: 20.h),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: Container(
+                                  height: 60.h,
+                                  width: 300.w,
+                                  decoration: BoxDecoration(
+                                    color: Colors.blue.shade100,
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      'Previous',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.grey.shade500),
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                          SizedBox(width: 10.w),
-                          Expanded(
-                            child: InkWell(
-                              onTap: () {
-                                if (formKey.currentState!.validate()) {
-                                  Address addressmodel = Address();
-                                  addressmodel.houseNumber = house.text;
-                                  addressmodel.postalCode = code.text;
-                                  addressmodel.address = address.text;
-                                  widget.model.address = addressmodel;
-                                  print(widget.model.toJson());
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            NextOfKinPage(model: widget.model)),
-                                  );
-                                }
-                              },
-                              child: Container(
-                                height: 60.h,
-                                width: 300.w,
-                                decoration: BoxDecoration(
-                                  color: Color(0xfffaeaea),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'Next',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.grey.shade500),
+                            SizedBox(width: 10.w),
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {
+                                  if (formKey.currentState!.validate()) {
+                                    Address addressmodel = Address();
+                                    addressmodel.houseNumber = house.text;
+                                    addressmodel.postalCode = code.text;
+                                    addressmodel.address = address.text;
+                                    widget.model.address = addressmodel;
+                                    print(widget.model.toJson());
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => NextOfKinPage(
+                                              model: widget.model)),
+                                    );
+                                  }
+                                },
+                                child: Container(
+                                  height: 60.h,
+                                  width: 300.w,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xfffaeaea),
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      'Next',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.grey.shade500),
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

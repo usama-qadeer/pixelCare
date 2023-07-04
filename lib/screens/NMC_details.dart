@@ -77,6 +77,43 @@ class _NMCDetailsState extends State<NMCDetails> {
     super.initState();
   }
 
+  List<DropdownMenuItem<String>> get dropdownItems {
+    List<DropdownMenuItem<String>> menuItems = [
+      DropdownMenuItem(child: Text("01"), value: "01"),
+      DropdownMenuItem(child: Text("02"), value: "02"),
+      DropdownMenuItem(child: Text("03"), value: "03"),
+      DropdownMenuItem(child: Text("04"), value: "04"),
+      DropdownMenuItem(child: Text("05"), value: "05"),
+      DropdownMenuItem(child: Text("06"), value: "06"),
+      DropdownMenuItem(child: Text("07"), value: "07"),
+      DropdownMenuItem(child: Text("08"), value: "08"),
+      DropdownMenuItem(child: Text("09"), value: "09"),
+      DropdownMenuItem(child: Text("10"), value: "10"),
+      DropdownMenuItem(child: Text("11"), value: "11"),
+      DropdownMenuItem(child: Text("12"), value: "12"),
+      DropdownMenuItem(child: Text("13"), value: "13"),
+      DropdownMenuItem(child: Text("14"), value: "14"),
+      DropdownMenuItem(child: Text("15"), value: "15"),
+      DropdownMenuItem(child: Text("16"), value: "16"),
+      DropdownMenuItem(child: Text("17"), value: "17"),
+      DropdownMenuItem(child: Text("18"), value: "18"),
+      DropdownMenuItem(child: Text("19"), value: "19"),
+      DropdownMenuItem(child: Text("20"), value: "20"),
+      DropdownMenuItem(child: Text("21"), value: "21"),
+      DropdownMenuItem(child: Text("22"), value: "22"),
+      DropdownMenuItem(child: Text("23"), value: "23"),
+      DropdownMenuItem(child: Text("24"), value: "24"),
+      DropdownMenuItem(child: Text("25"), value: "25"),
+      DropdownMenuItem(child: Text("26"), value: "26"),
+      DropdownMenuItem(child: Text("27"), value: "27"),
+      DropdownMenuItem(child: Text("28"), value: "28"),
+      DropdownMenuItem(child: Text("29"), value: "29"),
+      DropdownMenuItem(child: Text("30"), value: "30"),
+      DropdownMenuItem(child: Text("31"), value: "31"),
+    ];
+    return menuItems;
+  }
+
   UserModel _model = UserModel();
   @override
   Widget build(BuildContext context) {
@@ -366,6 +403,186 @@ class _NMCDetailsState extends State<NMCDetails> {
                                 ],
                               ),
                             ),
+
+                            // Container(
+                            //   margin: EdgeInsets.only(left: 20.w, top: 15.h),
+                            //   child: Text('Date of Birth',
+                            //       style: TextStyle(fontSize: 15.sp)),
+                            // ),
+                            // Padding(
+                            //   padding: EdgeInsets.only(
+                            //       top: 10.h, left: 20.w, right: 20.w),
+                            //   child: Row(
+                            //     mainAxisAlignment: MainAxisAlignment.center,
+                            //     children: [
+                            //       // Container(
+                            //       //   height: 50.h,
+                            //       //   width: 90.w,
+                            //       //   child: DropdownButtonFormField<String>(
+                            //       //     value: day,
+                            //       //     items: dropdownItems,
+                            //       //     // List.generate(
+                            //       //     //     31,
+                            //       //     //     (index) =>
+                            //       //     // DropdownMenuItem(
+                            //       //     //           child: Text('${index + 1}'),
+                            //       //     //           value: '${index + 1}',
+                            //       //     //         )),
+
+                            //       //     onChanged: (String? value) {
+                            //       //       day = value!;
+                            //       //     },
+                            //       //     decoration: InputDecoration(
+                            //       //       contentPadding: EdgeInsets.symmetric(
+                            //       //           vertical: 5, horizontal: 5),
+                            //       //       hintStyle: GoogleFonts.dmSans(
+                            //       //         fontWeight: FontWeight.w500,
+                            //       //         fontSize: 15.sp,
+                            //       //         color: Color(0xffACA9A9),
+                            //       //       ),
+                            //       //       fillColor: Colors.grey.shade200,
+                            //       //       filled: true,
+                            //       //       border: OutlineInputBorder(
+                            //       //         borderSide: BorderSide.none,
+                            //       //         borderRadius: BorderRadius.all(
+                            //       //           Radius.circular(8),
+                            //       //         ),
+                            //       //       ),
+                            //       //       enabledBorder: OutlineInputBorder(
+                            //       //         borderSide: BorderSide.none,
+                            //       //         borderRadius: BorderRadius.all(
+                            //       //           Radius.circular(8),
+                            //       //         ),
+                            //       //       ),
+                            //       //       focusedBorder: OutlineInputBorder(
+                            //       //         borderSide: BorderSide.none,
+                            //       //         borderRadius: BorderRadius.all(
+                            //       //           Radius.circular(8),
+                            //       //         ),
+                            //       //       ),
+                            //       //     ),
+                            //       //   ),
+                            //       // ),
+
+                            //       SizedBox(width: 10.w),
+                            //       Container(
+                            //         height: 50.h,
+                            //         width: 140.w,
+                            //         decoration: BoxDecoration(
+                            //           color: Colors.grey.shade200,
+                            //           borderRadius: BorderRadius.circular(5),
+                            //         ),
+                            //         child: DropdownButtonFormField<String>(
+                            //           value: month,
+                            //           items: [
+                            //             'January',
+                            //             'February',
+                            //             'March',
+                            //             'April',
+                            //             'May',
+                            //             'June',
+                            //             'July',
+                            //             'August',
+                            //             'September',
+                            //             'October',
+                            //             'November',
+                            //             'December'
+                            //           ]
+                            //               .map((e) => DropdownMenuItem(
+                            //                     child: Text('${e}'),
+                            //                     value: e,
+                            //                   ))
+                            //               .toList(),
+                            //           onChanged: (String? value) {
+                            //             month = value!;
+                            //           },
+                            //           decoration: InputDecoration(
+                            //             contentPadding: EdgeInsets.symmetric(
+                            //                 vertical: 5, horizontal: 5),
+                            //             hintStyle: GoogleFonts.dmSans(
+                            //               fontWeight: FontWeight.w500,
+                            //               fontSize: 15.sp,
+                            //               color: Color(0xffACA9A9),
+                            //             ),
+                            //             fillColor: Colors.grey.shade200,
+                            //             filled: true,
+                            //             border: OutlineInputBorder(
+                            //               borderSide: BorderSide.none,
+                            //               borderRadius: BorderRadius.all(
+                            //                 Radius.circular(8),
+                            //               ),
+                            //             ),
+                            //             enabledBorder: OutlineInputBorder(
+                            //               borderSide: BorderSide.none,
+                            //               borderRadius: BorderRadius.all(
+                            //                 Radius.circular(8),
+                            //               ),
+                            //             ),
+                            //             focusedBorder: OutlineInputBorder(
+                            //               borderSide: BorderSide.none,
+                            //               borderRadius: BorderRadius.all(
+                            //                 Radius.circular(8),
+                            //               ),
+                            //             ),
+                            //           ),
+                            //         ),
+                            //       ),
+                            //       SizedBox(width: 10.w),
+                            //       Container(
+                            //         height: 50.h,
+                            //         width: 100.w,
+                            //         decoration: BoxDecoration(
+                            //           color: Colors.grey.shade200,
+                            //           borderRadius: BorderRadius.circular(5),
+                            //         ),
+                            //         child: DropdownButtonFormField<String>(
+                            //           value: year,
+                            //           items: List.generate(
+                            //               DateTime.now().year,
+                            //               (index) => DropdownMenuItem(
+                            //                     child: Text(
+                            //                         '${DateTime.now().year - index}'),
+                            //                     value:
+                            //                         '${DateTime.now().year - index}',
+                            //                   )),
+                            //           onChanged: (String? value) {
+                            //             year = value!;
+                            //           },
+                            //           decoration: InputDecoration(
+                            //             contentPadding: EdgeInsets.symmetric(
+                            //                 vertical: 5, horizontal: 5),
+                            //             hintStyle: GoogleFonts.dmSans(
+                            //               fontWeight: FontWeight.w500,
+                            //               fontSize: 15.sp,
+                            //               color: Color(0xffACA9A9),
+                            //             ),
+                            //             fillColor: Colors.grey.shade200,
+                            //             filled: true,
+                            //             border: OutlineInputBorder(
+                            //               borderSide: BorderSide.none,
+                            //               borderRadius: BorderRadius.all(
+                            //                 Radius.circular(8),
+                            //               ),
+                            //             ),
+                            //             enabledBorder: OutlineInputBorder(
+                            //               borderSide: BorderSide.none,
+                            //               borderRadius: BorderRadius.all(
+                            //                 Radius.circular(8),
+                            //               ),
+                            //             ),
+                            //             focusedBorder: OutlineInputBorder(
+                            //               borderSide: BorderSide.none,
+                            //               borderRadius: BorderRadius.all(
+                            //                 Radius.circular(8),
+                            //               ),
+                            //             ),
+                            //           ),
+                            //         ),
+                            //       ),
+                            //     ],
+                            //   ),
+                            // ),
+
                             // MyTextField(
                             //   onChanged: (value){
                             //     model.data?.expiryDate=value;

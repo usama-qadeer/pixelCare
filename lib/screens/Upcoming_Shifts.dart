@@ -38,17 +38,18 @@ class _UpcomingShiftsState extends State<UpcomingShifts> {
           },
           child: Icon(
             Icons.arrow_back_ios_new_rounded,
-            color: Colors.grey,
+            color: Colors.white,
           ),
         ),
-        backgroundColor: Colors.grey.shade100,
+        backgroundColor: Colors.blue,
         title: Text(
           'Upcoming Shifts',
           style: TextStyle(
-              fontSize: 18.sp,
-              color: Colors.black,
+              fontSize: 20.sp,
+              color: Colors.white,
               fontWeight: FontWeight.w700),
         ),
+        centerTitle: true,
       ),
       body:
           // Visibility(
@@ -60,7 +61,7 @@ class _UpcomingShiftsState extends State<UpcomingShifts> {
             height: MediaQuery.of(context).size.height * 0.8,
             width: MediaQuery.of(context).size.width,
             child: StreamBuilder<UpcommingShiftsModel>(
-                stream: upcoming?.asStream(),
+                stream: upcoming?.asStream().asBroadcastStream(),
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     if (snapshot.data?.data!.length == 0) {

@@ -151,12 +151,12 @@ class _TimeSheetPageState extends State<TimeSheetPage> {
                           if (snapshot.hasData) {
                             return snapshot.data!.data == null
                                 ? const Center(
-                                    heightFactor: 15,
+                                    heightFactor: 10,
                                     child: Padding(
                                       padding: EdgeInsets.symmetric(
                                           horizontal: 48.0),
                                       child: Text(
-                                        'Please Submit your Availability & Application Form',
+                                        'Make Sure You Have Submitted Your Application Form, Availablity, and Applied For a Vacancy.',
                                         style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold,
@@ -210,7 +210,7 @@ class _TimeSheetPageState extends State<TimeSheetPage> {
                                               ),
                                               const Spacer(),
                                               Text(
-                                                '${snapshot.data!.data!.jobPost[1]}',
+                                                '${snapshot.data!.data!.jobPost}',
                                                 style: const TextStyle(
                                                   color: Colors.blue,
                                                 ),

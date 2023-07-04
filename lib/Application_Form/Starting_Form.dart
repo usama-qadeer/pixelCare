@@ -7,9 +7,12 @@ import 'package:pixel_app/Application_Form/Personal_Details.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Model/ApplicationFormModel.dart';
+import 'dart:developer' as dev;
 
 class StartingFormPage extends StatefulWidget {
-  const StartingFormPage({Key? key}) : super(key: key);
+  StartingFormPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<StartingFormPage> createState() => _StartingFormPageState();
@@ -17,6 +20,7 @@ class StartingFormPage extends StatefulWidget {
 
 class _StartingFormPageState extends State<StartingFormPage> {
   List title = [
+    "All",
     'Registered Nurse (RGN)',
     'Registered Mental Nurse (RMN)',
     'Senior Carer',
@@ -48,43 +52,43 @@ class _StartingFormPageState extends State<StartingFormPage> {
   var year = '2023';
   var dob;
 
-  // Future<void> _SetVals() async {
-  //   SharedPreferences prefs = await SharedPreferences.getInstance();
+  Future<void> _SetVals() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
 
-  //   if (prefs.getString("heared") != null) {
-  //     howKnow.text = prefs.getString("heared").toString();
-  //   }
-  //   if (prefs.getString("pin") != null) {
-  //     pin.text = prefs.getString("pin").toString();
-  //   }
+    if (prefs.getString("heared") != null) {
+      howKnow.text = prefs.getString("heared").toString();
+    }
+    if (prefs.getString("pin") != null) {
+      pin.text = prefs.getString("pin").toString();
+    }
 
-  //   if (prefs.getString("dayed") != null) {
-  //     day = prefs.getString("dayed").toString();
-  //   }
+    if (prefs.getString("dayed") != null) {
+      day = prefs.getString("dayed").toString();
+    }
 
-  //   if (prefs.getString("monthed") != null) {
-  //     month = prefs.getString("monthed").toString();
-  //     print(month);
-  //     print(prefs.getString("monthed").toString());
-  //   }
-  //   if (prefs.getString("yeared") != null) {
-  //     year = prefs.getString("yeared").toString();
-  //   }
+    if (prefs.getString("monthed") != null) {
+      month = prefs.getString("monthed").toString();
+      print(month);
+      print(prefs.getString("monthed").toString());
+    }
+    if (prefs.getString("yeared") != null) {
+      year = prefs.getString("yeared").toString();
+    }
 
-  //   if (prefs.getString("rgn") != null) {
-  //     titleSelected = prefs.getString("rgn").toString();
-  //   }
-  //   if (prefs.getString("company") != null) {
-  //     company.text = prefs.getString("company").toString();
-  //   }
-  //   if (prefs.getString("incNo") != null) {
-  //     incNo.text = prefs.getString("incNo").toString();
-  //   }
-  //   if (prefs.getString("weekly") != null) {
-  //     weekly.text = prefs.getString("weekly").toString();
-  //   }
-  //   setState(() {});
-  // }
+    if (prefs.getString("rgn") != null) {
+      titleSelected = prefs.getString("rgn").toString();
+    }
+    if (prefs.getString("company") != null) {
+      company.text = prefs.getString("company").toString();
+    }
+    if (prefs.getString("incNo") != null) {
+      incNo.text = prefs.getString("incNo").toString();
+    }
+    if (prefs.getString("weekly") != null) {
+      weekly.text = prefs.getString("weekly").toString();
+    }
+    setState(() {});
+  }
 
   void currentDate() {
     DateTime.now().month;
@@ -153,7 +157,9 @@ class _StartingFormPageState extends State<StartingFormPage> {
   @override
   void initState() {
     // TODO: implement initState
-    // _SetVals();
+    _SetVals();
+    // dev.log("00000 ${widget.model.toJson()}");
+
     super.initState();
   }
 

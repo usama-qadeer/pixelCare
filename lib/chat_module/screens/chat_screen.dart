@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../widgets/bottomNavigationBar/BottomNavigation.dart';
 import '../widgets/chat/messages.dart';
@@ -84,8 +85,11 @@ class _ChatScreenState extends State<ChatScreen> {
                 ),
               ),
             ],
-            onChanged: (value) {
+            onChanged: (value) async {
+              SharedPreferences pref = await SharedPreferences.getInstance();
               if (value == 'logout') {
+                //  pref.remove("Submitted");
+
                 FirebaseAuth.instance.signOut();
                 Navigator.pushAndRemoveUntil(
                   context,

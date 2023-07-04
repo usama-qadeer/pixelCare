@@ -5,6 +5,7 @@ import 'package:pixel_app/screens/Booking1.dart';
 import 'package:pixel_app/screens/TimeSheet.dart';
 import 'package:pixel_app/screens/Upcoming_Shifts.dart';
 import 'package:pixel_app/screens/Vacancy.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Controller/UpcomingShiftsController.dart';
 import '../DocumentsUpload/document_upload.dart';
@@ -44,6 +45,7 @@ class _HomePageState extends State<HomePage> {
 
   void initState() {
     GetData1();
+    getDataa();
     // TODO: implement initState
     super.initState();
   }
@@ -54,6 +56,12 @@ class _HomePageState extends State<HomePage> {
 
   GetData1() async {
     await GetData();
+  }
+
+  getDataa() async {
+    SharedPreferences _prefs = await SharedPreferences.getInstance();
+    var getTitle = _prefs.getString("rgn");
+    print("rgnnnnnnn${getTitle}");
   }
 
   @override
@@ -153,7 +161,9 @@ class _HomePageState extends State<HomePage> {
                                 ),
 
                                 StreamBuilder<UpcommingShiftsModel>(
-                                    stream: upcoming?.asStream(),
+                                    stream: upcoming
+                                        ?.asStream()
+                                        .asBroadcastStream(),
                                     builder: (context, snapshot) {
                                       if (snapshot.hasData) {
                                         if (snapshot.data?.data!.length != 0)
@@ -222,38 +232,40 @@ class _HomePageState extends State<HomePage> {
                                                                       ),
                                                                     ],
                                                                   )
-                                                                : Row(
-                                                                    children: [
-                                                                      Text(
-                                                                        todayTimeStart ==
-                                                                                '0'
-                                                                            ? 'No Shift'
-                                                                            : '$todayTimeStart',
-                                                                        style:
-                                                                            const TextStyle(
-                                                                          color:
-                                                                              Color(0xff3b53a4),
-                                                                        ),
-                                                                      ),
-                                                                      Text(
-                                                                        '-----------------------------',
-                                                                        style: TextStyle(
+                                                                : Center(
+                                                                    child: Row(
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .end,
+                                                                      children: [
+                                                                        Text(
+                                                                          todayTimeStart == '0'
+                                                                              ? 'No Shift'
+                                                                              : '$todayTimeStart',
+                                                                          style:
+                                                                              const TextStyle(
                                                                             color:
-                                                                                Colors.grey,
-                                                                            fontSize: 14.sp),
-                                                                      ),
-                                                                      Text(
-                                                                        todayTimeEnd ==
-                                                                                '0'
-                                                                            ? 'No Shift'
-                                                                            : '$todayTimeEnd',
-                                                                        style:
-                                                                            const TextStyle(
-                                                                          color:
-                                                                              Color(0xff3b53a4),
+                                                                                Color(0xff3b53a4),
+                                                                          ),
                                                                         ),
-                                                                      ),
-                                                                    ],
+                                                                        Text(
+                                                                          '-----------------------------',
+                                                                          style: TextStyle(
+                                                                              color: Colors.grey,
+                                                                              fontSize: 14.sp),
+                                                                        ),
+                                                                        Text(
+                                                                          todayTimeEnd == '0'
+                                                                              ? 'No Shift'
+                                                                              : '$todayTimeEnd',
+                                                                          style:
+                                                                              const TextStyle(
+                                                                            color:
+                                                                                Color(0xff3b53a4),
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
                                                                   ),
                                                             SizedBox(
                                                                 height: 2.h),

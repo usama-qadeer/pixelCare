@@ -7,8 +7,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'Model/ApplicationFormModel.dart';
 
 class HealthPage extends StatefulWidget {
-  HealthPage({required this.model});
   ApplicationFormModel model = ApplicationFormModel();
+  HealthPage({required this.model});
 
   @override
   State<HealthPage> createState() => _HealthPageState();
@@ -104,6 +104,9 @@ class _HealthPageState extends State<HealthPage> {
     title2Selected = widget.model.covid19?.careHomeBefore ?? "Yes";
     title3Selected = widget.model.covid19?.demantiaCareBefore ?? "Yes";
     title4Selected = widget.model.covid19?.drivingLicense ?? "Yes";
+    print("***********");
+    print(widget.model.toJson());
+    print("***********");
 
     // TODO: implement initState
     super.initState();

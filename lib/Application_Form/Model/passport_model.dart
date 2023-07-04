@@ -1,114 +1,118 @@
 class ApiGetPassport {
-  ApiGetPassport({
-    required this.status,
-    required this.message,
-    required this.data,
-  });
-  late final int status;
-  late final String message;
-  late final Data data;
+  int? status;
+  String? message;
+  List<Data>? data;
+
+  ApiGetPassport({this.status, this.message, this.data});
 
   ApiGetPassport.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
-    data = Data.fromJson(json['data']);
+    if (json['data'] != null) {
+      data = <Data>[];
+      json['data'].forEach((v) {
+        data!.add(new Data.fromJson(v));
+      });
+    }
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['status'] = status;
-    _data['message'] = message;
-    _data['data'] = data.toJson();
-    return _data;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['status'] = this.status;
+    data['message'] = this.message;
+    if (this.data != null) {
+      data['data'] = this.data!.map((v) => v.toJson()).toList();
+    }
+    return data;
   }
 }
 
 class Data {
-  Data({
-    required this.currentPage,
-    required this.data,
-    required this.firstPageUrl,
-    required this.from,
-    required this.lastPage,
-    required this.lastPageUrl,
-    required this.links,
-    this.nextPageUrl,
-    required this.path,
-    required this.perPage,
-    this.prevPageUrl,
-    required this.to,
-    required this.total,
-  });
-  late final int currentPage;
-  late final List<Data> data;
-  late final String firstPageUrl;
-  late final int from;
-  late final int lastPage;
-  late final String lastPageUrl;
-  late final List<Links> links;
-  late final Null nextPageUrl;
-  late final String path;
-  late final int perPage;
-  late final Null prevPageUrl;
-  late final int to;
-  late final int total;
+  int? id;
+  String? userId;
+  String? passportNumber;
+  String? expiryDate;
+  String? createdAt;
+  String? updatedAt;
+  List<DocumentImages>? documentImages;
+
+  Data(
+      {this.id,
+      this.userId,
+      this.passportNumber,
+      this.expiryDate,
+      this.createdAt,
+      this.updatedAt,
+      this.documentImages});
 
   Data.fromJson(Map<String, dynamic> json) {
-    currentPage = json['current_page'];
-    data = List.from(json['data']).map((e) => Data.fromJson(e)).toList();
-    firstPageUrl = json['first_page_url'];
-    from = json['from'];
-    lastPage = json['last_page'];
-    lastPageUrl = json['last_page_url'];
-    links = List.from(json['links']).map((e) => Links.fromJson(e)).toList();
-    nextPageUrl = null;
-    path = json['path'];
-    perPage = json['per_page'];
-    prevPageUrl = null;
-    to = json['to'];
-    total = json['total'];
+    id = json['id'];
+    userId = json['user_id'];
+    passportNumber = json['passport_number'];
+    expiryDate = json['Expiry_date'];
+    createdAt = json['created_at'];
+    updatedAt = json['updated_at'];
+    if (json['document_images'] != null) {
+      documentImages = <DocumentImages>[];
+      json['document_images'].forEach((v) {
+        documentImages!.add(new DocumentImages.fromJson(v));
+      });
+    }
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['current_page'] = currentPage;
-    _data['data'] = data.map((e) => e.toJson()).toList();
-    _data['first_page_url'] = firstPageUrl;
-    _data['from'] = from;
-    _data['last_page'] = lastPage;
-    _data['last_page_url'] = lastPageUrl;
-    _data['links'] = links.map((e) => e.toJson()).toList();
-    _data['next_page_url'] = nextPageUrl;
-    _data['path'] = path;
-    _data['per_page'] = perPage;
-    _data['prev_page_url'] = prevPageUrl;
-    _data['to'] = to;
-    _data['total'] = total;
-    return _data;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['user_id'] = this.userId;
+    data['passport_number'] = this.passportNumber;
+    data['Expiry_date'] = this.expiryDate;
+    data['created_at'] = this.createdAt;
+    data['updated_at'] = this.updatedAt;
+    if (this.documentImages != null) {
+      data['document_images'] =
+          this.documentImages!.map((v) => v.toJson()).toList();
+    }
+    return data;
   }
 }
 
-class Links {
-  Links({
-    this.url,
-    required this.label,
-    required this.active,
-  });
-  late final String? url;
-  late final String label;
-  late final bool active;
+class DocumentImages {
+  int? id;
+  String? documentId;
+  var userId;
+  String? type;
+  String? upload;
+  String? createdAt;
+  String? updatedAt;
 
-  Links.fromJson(Map<String, dynamic> json) {
-    url = null;
-    label = json['label'];
-    active = json['active'];
+  DocumentImages(
+      {this.id,
+      this.documentId,
+      this.userId,
+      this.type,
+      this.upload,
+      this.createdAt,
+      this.updatedAt});
+
+  DocumentImages.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    documentId = json['document_id'];
+    userId = json['user_id'];
+    type = json['type'];
+    upload = json['Upload'];
+    createdAt = json['created_at'];
+    updatedAt = json['updated_at'];
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['url'] = url;
-    _data['label'] = label;
-    _data['active'] = active;
-    return _data;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['document_id'] = this.documentId;
+    data['user_id'] = this.userId;
+    data['type'] = this.type;
+    data['Upload'] = this.upload;
+    data['created_at'] = this.createdAt;
+    data['updated_at'] = this.updatedAt;
+    return data;
   }
 }

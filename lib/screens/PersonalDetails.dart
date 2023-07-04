@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pixel_app/Application_Form/Model/ApplicationFormModel.dart';
 import 'package:pixel_app/Model/UserModel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -243,7 +242,7 @@ class _PersonalDetailsPageState extends State<PersonalDetailsPage>
   TextEditingController name = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController phone = TextEditingController();
-  // TextEditingController country = TextEditingController();
+  TextEditingController countryC = TextEditingController();
   TextEditingController nxt = TextEditingController();
   Future<void> _SetVals() async {
     SharedPreferences _prefs = await SharedPreferences.getInstance();
@@ -291,8 +290,21 @@ class _PersonalDetailsPageState extends State<PersonalDetailsPage>
 
   GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey();
   AnimationController? controller;
+  UserModel? _model;
+  Future<void> getData() async {
+    try {
+      final user = await AuthController().GetUserData();
+      setState(() {
+        _model = user;
+      });
+    } catch (e) {
+      // Handle error
+    }
+  }
+
   @override
   void initState() {
+    getData();
     // TODO: implement initState
     controller = AnimationController(
         vsync: this,
@@ -319,6 +331,7 @@ class _PersonalDetailsPageState extends State<PersonalDetailsPage>
 
   @override
   Widget build(BuildContext context) {
+    //print("iiiiiiiddddddd${_model!.data!.id}");
     // var appData = ApplicationFormModel().personalDetail?.homeTel;
 
     // print('aaaaaa${appData}');
@@ -346,7 +359,15 @@ class _PersonalDetailsPageState extends State<PersonalDetailsPage>
       ),
       key: scaffoldKey,
       backgroundColor: Colors.white,
-      body: SafeArea(
+      body:
+          // Column(
+          //   children: [
+          //     _model != null
+          //         ? Text(_model!.data!.name.toString())
+          //         : Text("Loading")
+          //   ],
+          // )
+          SafeArea(
         child: FutureBuilder<UserModel>(
             future: AuthController().GetUserData(),
             builder: (context, AsyncSnapshot<UserModel> snapShot) {
@@ -439,7 +460,7 @@ class _PersonalDetailsPageState extends State<PersonalDetailsPage>
                               );
                               if (result != null) {
                                 file = File(result!.files.single.path!);
-                                model..avatar = file!.path;
+                                model.avatar = file!.path as Null?;
                                 setState(() {});
                               } else {
                                 // User canceled the picker
@@ -485,35 +506,36 @@ class _PersonalDetailsPageState extends State<PersonalDetailsPage>
                               },
                               textCapitalization: TextCapitalization.words,
                               decoration: InputDecoration(
-                                contentPadding: EdgeInsets.all(18),
-                                hintStyle: GoogleFonts.dmSans(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 15.sp,
-                                  color: Color(0xffACA9A9),
-                                ),
-                                fillColor: Colors.grey.shade200,
-                                filled: true,
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(8),
+                                  contentPadding: EdgeInsets.all(18),
+                                  hintStyle: GoogleFonts.dmSans(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15.sp,
+                                    color: Color(0xffACA9A9),
                                   ),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(8),
+                                  fillColor: Colors.grey.shade200,
+                                  filled: true,
+                                  border: OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(8),
+                                    ),
                                   ),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(8),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(8),
+                                    ),
                                   ),
-                                ),
-                                hintText:
-                                    '${ApplicationFormModel().personalDetail?.surname ?? snapShot.data!.data!.name}',
-                              ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(8),
+                                    ),
+                                  ),
+                                  hintText: model.name ?? "Name"
+                                  // ${ApplicationFormModel().personalDetail?.surname ?? snapShot.data!.data!.name}
+
+                                  ),
                             ),
                           ),
                           Container(
@@ -627,7 +649,7 @@ class _PersonalDetailsPageState extends State<PersonalDetailsPage>
                                       Radius.circular(8),
                                     ),
                                   ),
-                                  hintText: model.phone
+                                  hintText: model.phone ?? "123456789"
 
                                   /// hintText: SharedPreferences _prefix = SharedPreferences.getInstance(),
                                   ),
@@ -689,46 +711,6 @@ class _PersonalDetailsPageState extends State<PersonalDetailsPage>
                               ),
                             ),
                           ),
-                          // Padding(
-                          //   padding: EdgeInsets.only(
-                          //       top: 10.h, left: 20.w, right: 20.w),
-                          //   child: TextFormField(
-                          //     controller: country,
-                          //     onChanged: (value) {
-                          //       model.data!.country = value;
-                          //       setState(() {});
-                          //     },
-                          //     decoration: InputDecoration(
-                          //       contentPadding: EdgeInsets.all(18),
-                          //       hintStyle: GoogleFonts.dmSans(
-                          //         fontWeight: FontWeight.w500,
-                          //         fontSize: 15.sp,
-                          //         color: Color(0xffACA9A9),
-                          //       ),
-                          //       fillColor: Colors.grey.shade200,
-                          //       filled: true,
-                          //       border: OutlineInputBorder(
-                          //         borderSide: BorderSide.none,
-                          //         borderRadius: BorderRadius.all(
-                          //           Radius.circular(8),
-                          //         ),
-                          //       ),
-                          //       enabledBorder: OutlineInputBorder(
-                          //         borderSide: BorderSide.none,
-                          //         borderRadius: BorderRadius.all(
-                          //           Radius.circular(8),
-                          //         ),
-                          //       ),
-                          //       focusedBorder: OutlineInputBorder(
-                          //         borderSide: BorderSide.none,
-                          //         borderRadius: BorderRadius.all(
-                          //           Radius.circular(8),
-                          //         ),
-                          //       ),
-                          //       hintText: '${snapShot.data?.data?.country}',
-                          //     ),
-                          //   ),
-                          // ),
 
                           Container(
                             margin: EdgeInsets.only(left: 20.w, top: 15.h),
@@ -907,6 +889,7 @@ class _PersonalDetailsPageState extends State<PersonalDetailsPage>
                               ],
                             ),
                           ),
+
                           // InkWell(
                           //   onTap: () {},
                           //   child: Container(

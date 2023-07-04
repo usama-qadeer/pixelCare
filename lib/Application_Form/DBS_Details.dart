@@ -1,11 +1,13 @@
+import 'dart:developer' as dev;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pixel_app/Application_Form/Employement.dart';
 import 'package:pixel_app/widgets/bottomNavigationBar/BottomNavigation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Constants/Constant.dart';
-import 'Educational_Details.dart';
 import 'Model/ApplicationFormModel.dart';
 
 class DBSPage extends StatefulWidget {
@@ -53,6 +55,8 @@ class _DBSPageState extends State<DBSPage> {
 
   @override
   void initState() {
+    dev.log("00003 ${widget.model.toJson()}");
+
     hide();
     titleSelected = widget.model.dbsDetail?.registerOnlineDbs ?? "Yes";
     title2Selected = widget.model.dbsDetail?.permissionToCheckOnline ?? "Yes";
@@ -513,7 +517,7 @@ class _DBSPageState extends State<DBSPage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => EducationalPage(
+                                        builder: (context) => EmploymentPage(
                                             model: widget.model)),
                                   );
                                 }

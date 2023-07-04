@@ -38,7 +38,9 @@ class UpcommingShiftsModel {
         status: json["status"],
         message: json["message"],
         currentPage: json["current_page"],
-        data: json["data"] != null ? List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))) : [],
+        data: json["data"] != null
+            ? List<Datum>.from(json["data"].map((x) => Datum.fromJson(x)))
+            : [],
         firstPageUrl: json["first_page_url"],
         from: json["from"],
         lastPage: json["last_page"],
@@ -56,7 +58,9 @@ class UpcommingShiftsModel {
         "status": status,
         "message": message,
         "current_page": currentPage,
-        "data": data != null ? List<dynamic>.from(data!.map((x) => x.toJson())) : [],
+        "data": data != null
+            ? List<dynamic>.from(data!.map((x) => x.toJson()))
+            : [],
         "first_page_url": firstPageUrl,
         "from": from,
         "last_page": lastPage,
@@ -120,7 +124,9 @@ class Datum {
         image: json["image"],
         description: json["description"],
         date: DateTime.parse(json["date"]),
-        jobEndDate: json["job_end_date"] != null ? DateTime.parse(json["job_end_date"]) : null,
+        jobEndDate: json["job_end_date"] != null
+            ? DateTime.parse(json["job_end_date"])
+            : null,
         timeStart: json["time_start"],
         timeEnd: json["time_end"],
         noOfStaff: json["no_of_staff"],
@@ -130,7 +136,8 @@ class Datum {
         updatedAt: DateTime.parse(json["updated_at"]),
         shiftDetailName: json["shift_detail_name"],
         careHome: CareHome.fromJson(json["care_home"]),
-        careHomeJobApplied: CareHomeJobApplied.fromJson(json["care_home_job_applied"]),
+        careHomeJobApplied:
+            CareHomeJobApplied.fromJson(json["care_home_job_applied"]),
       );
 
   Map<String, dynamic> toJson() => {
@@ -140,8 +147,10 @@ class Datum {
         "title": title,
         "image": image,
         "description": description,
-        "date": "${date.year.toString().padLeft(4, '0')}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}",
-        "job_end_date": "${jobEndDate!.year.toString().padLeft(4, '0')}-${jobEndDate!.month.toString().padLeft(2, '0')}-${jobEndDate!.day.toString().padLeft(2, '0')}",
+        "date":
+            "${date.year.toString().padLeft(4, '0')}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}",
+        "job_end_date":
+            "${jobEndDate!.year.toString().padLeft(4, '0')}-${jobEndDate!.month.toString().padLeft(2, '0')}-${jobEndDate!.day.toString().padLeft(2, '0')}",
         "time_start": timeStart,
         "time_end": timeEnd,
         "no_of_staff": noOfStaff,
@@ -184,8 +193,8 @@ class CareHome {
   int id;
   String groupName;
   String name;
-  String image;
-  String cityId;
+  var image;
+  var cityId;
   String postalCode;
   String address;
   String contactNumber;

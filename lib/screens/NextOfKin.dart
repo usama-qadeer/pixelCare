@@ -5,9 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pixel_app/Controller/AuthController.dart';
 import 'package:pixel_app/Model/NextKinModel.dart';
 
-import '../Application_Form/Model/ApplicationFormModel.dart';
-import '../Model/UserModel.dart';
-
 class NextKinPage extends StatefulWidget {
   const NextKinPage({Key? key}) : super(key: key);
 
@@ -71,6 +68,45 @@ class _NextKinPageState extends State<NextKinPage> {
   String? countryValue = "Country";
   String? stateValue = "Islamabad";
   String? cityValue = "Islamabad";
+  var month = 'September';
+  var day = '01';
+  var year = '2022';
+  List<DropdownMenuItem<String>> get dropdownItems {
+    List<DropdownMenuItem<String>> menuItems = [
+      DropdownMenuItem(child: Text("01"), value: "01"),
+      DropdownMenuItem(child: Text("02"), value: "02"),
+      DropdownMenuItem(child: Text("03"), value: "03"),
+      DropdownMenuItem(child: Text("04"), value: "04"),
+      DropdownMenuItem(child: Text("05"), value: "05"),
+      DropdownMenuItem(child: Text("06"), value: "06"),
+      DropdownMenuItem(child: Text("07"), value: "07"),
+      DropdownMenuItem(child: Text("08"), value: "08"),
+      DropdownMenuItem(child: Text("09"), value: "09"),
+      DropdownMenuItem(child: Text("10"), value: "10"),
+      DropdownMenuItem(child: Text("11"), value: "11"),
+      DropdownMenuItem(child: Text("12"), value: "12"),
+      DropdownMenuItem(child: Text("13"), value: "13"),
+      DropdownMenuItem(child: Text("14"), value: "14"),
+      DropdownMenuItem(child: Text("15"), value: "15"),
+      DropdownMenuItem(child: Text("16"), value: "16"),
+      DropdownMenuItem(child: Text("17"), value: "17"),
+      DropdownMenuItem(child: Text("18"), value: "18"),
+      DropdownMenuItem(child: Text("19"), value: "19"),
+      DropdownMenuItem(child: Text("20"), value: "20"),
+      DropdownMenuItem(child: Text("21"), value: "21"),
+      DropdownMenuItem(child: Text("22"), value: "22"),
+      DropdownMenuItem(child: Text("23"), value: "23"),
+      DropdownMenuItem(child: Text("24"), value: "24"),
+      DropdownMenuItem(child: Text("25"), value: "25"),
+      DropdownMenuItem(child: Text("26"), value: "26"),
+      DropdownMenuItem(child: Text("27"), value: "27"),
+      DropdownMenuItem(child: Text("28"), value: "28"),
+      DropdownMenuItem(child: Text("29"), value: "29"),
+      DropdownMenuItem(child: Text("30"), value: "30"),
+      DropdownMenuItem(child: Text("31"), value: "31"),
+    ];
+    return menuItems;
+  }
 
   // List country = [
   //   "Afghanistan",
@@ -320,9 +356,9 @@ class _NextKinPageState extends State<NextKinPage> {
           child: FutureBuilder<NextKinModel>(
               future: AuthController().GetNextKinUi(),
               builder: (context, snapshot) {
-                NextKinModel model = NextKinModel();
+                print(snapshot.data?.data!.title.toString());
                 if (snapshot.hasData) {
-                  model = snapshot.data!;
+                  var model = snapshot.data!;
 
                   return Form(
                     key: formKey,
@@ -425,12 +461,74 @@ class _NextKinPageState extends State<NextKinPage> {
                                     )
                                     .toList(),
                                 // value: snapshot.data!.data!.title == null ? title : snapshot.data!.data!.title,
-                                value: title,
+                                value: model.data!.title.toString(),
                                 onChanged: (String? value) {
-                                  title = value!;
+                                  model.data!.title = value.toString();
+                                  title = value.toString();
                                 },
                               ),
                             ),
+
+                            /// menu  for test
+
+                            // Container(
+                            //   margin: EdgeInsets.only(left: 20.w, top: 15.h),
+                            //   child: Text('Country',
+                            //       style: TextStyle(fontSize: 15.sp)),
+                            // ),
+                            // Padding(
+                            //   padding: EdgeInsets.only(
+                            //       left: 20.w, right: 20.w, top: 10),
+                            //   child: DropdownButtonFormField<String>(
+                            //     value: model.country,
+                            //     validator: (value) {
+                            //       if (value!.isEmpty) {
+                            //         return 'Please select from this field';
+                            //       }
+                            //       return null;
+                            //     },
+                            //     items: country
+                            //         .map((e) => DropdownMenuItem<String>(
+                            //               child: Text(e),
+                            //               value: e,
+                            //             ))
+                            //         .toList(),
+                            //     onChanged: (value) {
+                            //       model.country = value.toString();
+                            //       selectedCountry = value.toString();
+                            //     },
+                            //     decoration: InputDecoration(
+                            //       contentPadding: EdgeInsets.all(18),
+                            //       hintStyle: GoogleFonts.dmSans(
+                            //         fontWeight: FontWeight.w500,
+                            //         fontSize: 15.sp,
+                            //         color: Color(0xffACA9A9),
+                            //       ),
+                            //       fillColor: Colors.grey.shade200,
+                            //       filled: true,
+                            //       border: OutlineInputBorder(
+                            //         borderSide: BorderSide.none,
+                            //         borderRadius: BorderRadius.all(
+                            //           Radius.circular(8),
+                            //         ),
+                            //       ),
+                            //       enabledBorder: OutlineInputBorder(
+                            //         borderSide: BorderSide.none,
+                            //         borderRadius: BorderRadius.all(
+                            //           Radius.circular(8),
+                            //         ),
+                            //       ),
+                            //       focusedBorder: OutlineInputBorder(
+                            //         borderSide: BorderSide.none,
+                            //         borderRadius: BorderRadius.all(
+                            //           Radius.circular(8),
+                            //         ),
+                            //       ),
+                            //     ),
+                            //   ),
+                            // ),
+
+                            /// end
                             Container(
                               margin: EdgeInsets.only(left: 20.w, top: 15.h),
                               child: Text('Name',
@@ -479,8 +577,7 @@ class _NextKinPageState extends State<NextKinPage> {
                                       Radius.circular(8),
                                     ),
                                   ),
-                                  hintText:
-                                      '${ApplicationFormModel().nextOfKin?.email ?? "lll"}',
+                                  hintText: '${model.data!.name ?? "lll"}',
                                 ),
                               ),
                             ),
@@ -502,7 +599,7 @@ class _NextKinPageState extends State<NextKinPage> {
                               child: Container(
                                 child: CSCPicker(
                                   ///Enable disable state dropdown [OPTIONAL PARAMETER]
-                                  showStates: true,
+                                  showStates: false,
 
                                   /// Enable disable city drop down [OPTIONAL PARAMETER]
                                   showCities: true,
@@ -671,34 +768,35 @@ class _NextKinPageState extends State<NextKinPage> {
                                   }
                                 },
                                 decoration: InputDecoration(
-                                  contentPadding: EdgeInsets.all(18),
-                                  hintStyle: GoogleFonts.dmSans(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 15.sp,
-                                    color: Color(0xffACA9A9),
-                                  ),
-                                  fillColor: Colors.grey.shade200,
-                                  filled: true,
-                                  border: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(8),
+                                    contentPadding: EdgeInsets.all(18),
+                                    hintStyle: GoogleFonts.dmSans(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 15.sp,
+                                      color: Color(0xffACA9A9),
                                     ),
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(8),
+                                    fillColor: Colors.grey.shade200,
+                                    filled: true,
+                                    border: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(8),
+                                      ),
                                     ),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(8),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(8),
+                                      ),
                                     ),
-                                  ),
-                                  hintText: '${snapshot.data!.data!.address}',
-                                ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(8),
+                                      ),
+                                    ),
+                                    hintText: model.data!.address ?? "Address"
+                                    //hintText: '${snapshot.data!.data!.address}',
+                                    ),
                               ),
                             ),
                             // MyTextField(
@@ -729,34 +827,36 @@ class _NextKinPageState extends State<NextKinPage> {
                                   }
                                 },
                                 decoration: InputDecoration(
-                                  contentPadding: EdgeInsets.all(18),
-                                  hintStyle: GoogleFonts.dmSans(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 15.sp,
-                                    color: Color(0xffACA9A9),
-                                  ),
-                                  fillColor: Colors.grey.shade200,
-                                  filled: true,
-                                  border: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(8),
+                                    contentPadding: EdgeInsets.all(18),
+                                    hintStyle: GoogleFonts.dmSans(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 15.sp,
+                                      color: Color(0xffACA9A9),
                                     ),
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(8),
+                                    fillColor: Colors.grey.shade200,
+                                    filled: true,
+                                    border: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(8),
+                                      ),
                                     ),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(8),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(8),
+                                      ),
                                     ),
-                                  ),
-                                  hintText: '${snapshot.data!.data!.zipCode}',
-                                ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(8),
+                                      ),
+                                    ),
+                                    hintText:
+                                        model.data!.zipCode ?? "Postal Code"
+                                    // hintText: '${snapshot.data!.data!.zipCode}',
+                                    ),
                               ),
                             ),
                             // MyTextField(

@@ -35,13 +35,13 @@ class Data {
   dynamic hourlyRate;
   dynamic dob;
   dynamic status;
-  Null? temporaryBlockStart;
-  Null? temporaryBlockEnd;
-  Null? type;
+  var temporaryBlockStart;
+  var temporaryBlockEnd;
+  var type;
   dynamic avatar;
   dynamic nextOfKin;
   dynamic referralId;
-  Null? refferBy;
+  var refferBy;
   dynamic isBlocked;
   dynamic role;
   dynamic createdAt;

@@ -11,8 +11,8 @@ import 'BankDetails.dart';
 import 'Model/ApplicationFormModel.dart';
 
 class EmploymentPage extends StatefulWidget {
-  EmploymentPage({required this.model});
   ApplicationFormModel model = new ApplicationFormModel();
+  EmploymentPage({required this.model});
 
   @override
   State<EmploymentPage> createState() => _EmploymentPageState();
@@ -129,6 +129,10 @@ class _EmploymentPageState extends State<EmploymentPage> {
   @override
   void initState() {
     hide();
+    print("********************");
+    print(widget.model.toJson());
+    print("********************");
+
     titleSelected = widget.model.employment?.last.type ?? "Previous";
     name.text = widget.model.employment?.last.nameOfEmployer ?? "";
     reason.text = widget.model.employment?.last.reasonForLeaving ?? "";

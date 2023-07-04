@@ -6,6 +6,7 @@ import 'package:pixel_app/Constants/Constant.dart';
 
 import '../Controller/AuthController.dart';
 import 'accademicView.dart';
+import 'dart:developer' as dev;
 
 class AcademicPage extends StatefulWidget {
   const AcademicPage({Key? key}) : super(key: key);
@@ -72,6 +73,8 @@ class _AcademicPageState extends State<AcademicPage> {
   void initState() {
     // TODO: implement initState
     hide();
+    // dev.log("00004 ${widget.model.toJson()}");
+
     super.initState();
   }
 

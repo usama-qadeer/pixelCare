@@ -10,6 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../Constants/Constant.dart';
 import 'DBS_Details.dart';
 import 'Model/ApplicationFormModel.dart';
+import 'dart:developer' as dev;
 
 class NextOfKinPage extends StatefulWidget {
   ApplicationFormModel model = new ApplicationFormModel();
@@ -147,6 +148,8 @@ class _NextOfKinPageState extends State<NextOfKinPage> {
 
   @override
   void initState() {
+    dev.log("00002 ${widget.model.toJson()}");
+
     hide();
     titleSelected = widget.model.nextOfKin?.title ?? "Mr";
     surname.text = widget.model.nextOfKin?.surname ?? "";

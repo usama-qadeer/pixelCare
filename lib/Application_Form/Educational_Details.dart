@@ -1,12 +1,11 @@
 // ignore_for_file: use_build_context_synchronously, unused_local_variable
 
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'dart:developer' as dev;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pixel_app/widgets/bottomNavigationBar/BottomNavigation.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Constants/Constant.dart';
 import '../Controller/AuthController.dart';
@@ -16,8 +15,8 @@ import 'Model/ApplicationFormModel.dart';
 import 'Trainings.dart';
 
 class EducationalPage extends StatefulWidget {
-  EducationalPage({required this.model});
   ApplicationFormModel model = ApplicationFormModel();
+  EducationalPage({required this.model});
 
   @override
   State<EducationalPage> createState() => _EducationalPageState();
@@ -76,6 +75,8 @@ class _EducationalPageState extends State<EducationalPage> {
   void initState() {
     // TODO: implement h
     hide();
+    dev.log("00004 ${widget.model.toJson()}");
+
     super.initState();
   }
 
@@ -394,7 +395,7 @@ class _EducationalPageState extends State<EducationalPage> {
                                                                                     context,
                                                                                     MaterialPageRoute(
                                                                                         builder: (context) => EducationalPage(
-                                                                                              model: model1,
+                                                                                              model: widget.model,
                                                                                             )),
                                                                                   );
                                                                                 },

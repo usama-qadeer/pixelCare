@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pixel_app/Application_Form/Controller/ApplicationFormController.dart';
+import 'package:pixel_app/screens/status_screen/pending_user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_signaturepad/signaturepad.dart';
 
@@ -15,8 +16,8 @@ import '../widgets/bottomNavigationBar/BottomNavigation.dart';
 import 'Model/ApplicationFormModel.dart';
 
 class Declaration extends StatefulWidget {
-  Declaration({required this.model});
   ApplicationFormModel model = ApplicationFormModel();
+  Declaration({required this.model});
 
   @override
   State<Declaration> createState() => _DeclarationState();
@@ -84,6 +85,10 @@ class _DeclarationState extends State<Declaration> {
 
   @override
   void initState() {
+    print("***********");
+    print(widget.model.toJson());
+    print("***********");
+
     _setVals();
 
     date.text =
@@ -688,16 +693,24 @@ class _DeclarationState extends State<Declaration> {
                                               ),
                                             ),
                                             GestureDetector(
-                                              onTap: () {
+                                              onTap: () async {
+                                                SharedPreferences preferences =
+                                                    await SharedPreferences
+                                                        .getInstance();
+                                                preferences.setBool(
+                                                    "Submitted", true);
+                                                print(
+                                                    "formvalueeee${preferences.getBool("Submitted")}");
                                                 bottomNavigationBarState
                                                     .selectedIndex = 0;
                                                 Navigator.of(context)
                                                     .pushAndRemoveUntil(
                                                         MaterialPageRoute(
                                                           builder: (context) =>
-                                                              const bottomNavigationBar(),
+                                                              PendingUser(),
                                                         ),
-                                                        (Route route) => false);
+                                                        (Route route) => false)
+                                                    .then((value) => null);
                                                 // Navigator.of(context)
                                                 //     .pushReplacement(
                                                 //         MaterialPageRoute(

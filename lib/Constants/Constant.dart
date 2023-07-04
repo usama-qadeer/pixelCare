@@ -15,7 +15,7 @@ String p45p60Status = "Pending";
 String termLetterStatus = "Pending";
 String vaccinationProofStatus = "Pending";
 String nmcLetterStatus = "Pending";
-const baseUrl = "https://admin.pixelcare.co.uk";
+const baseUrl = "https://pixelcare.stackbuffers.com/public";
 void hide() {
   // This will hide the bottom system navigation bar
   // Only the status bar on the top will show up
